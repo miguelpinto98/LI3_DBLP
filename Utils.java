@@ -20,25 +20,26 @@ public class Utils {
 		return linhas;
 	}
 	
-	public static void trataLinhas(ArrayList<String> linhas) {
+	public static void trataLinhas(RedeAno ra ,ArrayList<String> linhas) {
 		
 		for(String s : linhas)
-			trataLinha(s);
+			trataLinha(ra,s);
 	}
 
-	public static void trataLinha(String linha) {
+	public static void trataLinha(RedeAno ra, String linha) {
 		String[] str = linha.split(", ");
 		ArrayList<String> ca = new ArrayList<>();
-		String a = null;
 		int ano = Integer.parseInt(str[str.length-1]);
 		
 		for(int i=0; i<str.length-1; i++) {
-			a = str[i];
+			Autor a = new Autor(str[i]);
 			ca = new ArrayList<>(); 
 			for(int j=0; j<str.length-1; j++) {
 				if(i!=j)
 					ca.add(str[j]);
 			}
+			
+			
 			System.out.println("Ano: "+ano+"\nAutor: "+a+"\nCoAutores: "+ca.toString());
 		}		
 	}

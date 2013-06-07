@@ -8,12 +8,27 @@ public class RedeAno {
 		this.rano = new TreeMap<>();
 	}
 	
+	public RedeAno(TreeMap<Integer, RedeAutor> tra) {
+		this.rano = new TreeMap<>();
+		
+		for(Integer n : tra.keySet()) {
+			RedeAutor aux = tra.get(n);
+			this.rano.put(n, aux.clone());
+		}
+	} 
+	
 	public RedeAno(RedeAno ra) {
 		this.rano = ra.getRedeAno();
 	}
 	
 	private TreeMap<Integer, RedeAutor> getRedeAno() {
-		return null;
+		TreeMap<Integer, RedeAutor> aux = new TreeMap<>();
+		
+		for(Integer n : this.rano.keySet()) {
+			RedeAutor ra = this.rano.get(n);
+			aux.put(n, ra.clone());
+		}
+		return aux;
 	}
 
 	public RedeAno clone() {
@@ -21,10 +36,12 @@ public class RedeAno {
 	}
 	
 	public String toString() {
-		StringBuilder str = new StringBuilder();
+		StringBuilder s =  new StringBuilder();
 		
 		for(Integer n : this.rano.keySet())
-			str.append("Ano: ")
+			s.append("Ano: "+n+this.rano.get(n).toString());
+		
+		return s.toString();
 	}
 	
 	public boolean equals(Object o) {
