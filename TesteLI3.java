@@ -10,11 +10,13 @@ public class TesteLI3 {
 	      
 	    long inicio = System.nanoTime();
 	    linhas = Utils.leLinhasScanner("publicx.txt");
-	    long fim = System.nanoTime();
 	       
 	    out.println("Linhas Lidas com Scanner: " + linhas.size());
-	    out.println("Tempo: " + (fim - inicio)/1.0E09 + " segs.\n");
-	    
+	    	    
 	    Utils.trataLinhas(ra,linhas);
+	    System.out.println(ra.toString());
+	    
+	    long fim = System.nanoTime();
+	    out.println("Tempo: " + (fim - inicio)/1.0E09 + " segs.\n");
 	   }
 	}

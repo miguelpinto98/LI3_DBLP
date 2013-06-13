@@ -28,7 +28,7 @@ public class Utils {
 
 	public static void trataLinha(RedeAno ra, String linha) {
 		String[] str = linha.split(", ");
-		ArrayList<String> ca = new ArrayList<>();
+		ArrayList<Autor> ca = new ArrayList<>();
 		int ano = Integer.parseInt(str[str.length-1]);
 		
 		for(int i=0; i<str.length-1; i++) {
@@ -36,11 +36,10 @@ public class Utils {
 			ca = new ArrayList<>(); 
 			for(int j=0; j<str.length-1; j++) {
 				if(i!=j)
-					ca.add(str[j]);
+					ca.add(new Autor(str[j]));
 			}
-			
-			
-			System.out.println("Ano: "+ano+"\nAutor: "+a+"\nCoAutores: "+ca.toString());
+			ra.insereRedeAno(ano, a, ca);
+			//System.out.println("Ano: "+ano+"\nAutor: "+a+"\nCoAutores: "+ca.toString());
 		}		
 	}
 }

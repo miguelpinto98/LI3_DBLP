@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
 public class RedeAutor {
 	private HashMap<Autor,ArrayList<Autor>> rautor;
@@ -55,11 +57,37 @@ public class RedeAutor {
 		ArrayList<Autor> aux = null;
 		
 		for(Autor a : this.rautor.keySet()) {
-			s.append("Autor: "+a);
+			s.append("Autor: "+a.getNumeroArtigos()+" "+ a);
 			aux = this.rautor.get(a);
 			for(Autor at : aux)
-				s.append(at.toString());
+				s.append("\t\t"+at.toString());
 		}
 		return s.toString();
+	}
+
+	public void insereAutores(Autor a, ArrayList<Autor> ca) {
+		ArrayList<Autor> al = null;
+		
+		if(this.rautor.containsKey(a)) {
+			this.masquelixo(this.rautor.keySet(),a);
+			this.rautor.get(a).addAll(ca); //teste
+		} else {
+			al = new ArrayList<>();
+			al.addAll(ca);
+			this.rautor.put(a, al);
+		}
+		
+	}
+
+	public void masquelixo(Set<Autor> set, Autor a) { //teste
+		Iterator<Autor> it = set.iterator();
+		boolean encontrou = false;
+		Autor at = null;
+		
+		while(it.hasNext() && !encontrou)
+			if((at=it.next()).equals(a)) {
+				at.addArtigo();
+				encontrou = true;
+			}
 	}
 }

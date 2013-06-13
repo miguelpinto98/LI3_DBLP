@@ -1,5 +1,11 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.TreeMap;
-
 
 public class RedeAno {
 	private TreeMap<Integer, RedeAutor> rano;
@@ -36,10 +42,10 @@ public class RedeAno {
 	}
 	
 	public String toString() {
-		StringBuilder s =  new StringBuilder();
+		StringBuilder s =  new StringBuilder("REDE\n");
 		
 		for(Integer n : this.rano.keySet())
-			s.append("Ano: "+n+this.rano.get(n).toString());
+			s.append("Ano: "+n+"\n"+ this.rano.get(n).toString());
 		
 		return s.toString();
 	}
@@ -52,4 +58,47 @@ public class RedeAno {
 		RedeAno ra = (RedeAno) o;
 		return this.rano.equals(ra.getRedeAno());
 	}
+	
+	@SuppressWarnings("unchecked")
+	public void carregaRM(String file) throws FileNotFoundException, IOException, ClassNotFoundException {
+        FileInputStream f = new FileInputStream(file);
+        ObjectInputStream o = new ObjectInputStream(f);
+        
+        this.rano = (TreeMap<Integer, RedeAutor>) o.readObject();
+
+        o.close();
+        f.close();
+	}
+	
+	public void gravaRM(String file) throws FileNotFoundException, IOException {
+        FileOutputStream f = new FileOutputStream(file);
+        ObjectOutputStream o = new ObjectOutputStream(f);
+        
+        o.writeObject(this.rano);
+
+        o.close();
+        f.close();
+	}
+	
+	public int keyAnoInferior() {
+		return this.rano.firstKey();
+	}
+	
+	public int keyAnoSuperior() {
+		return this.rano.lastKey();
+	}
+	
+	public void insereRedeAno(int ano, Autor a, ArrayList<Autor> ca) {
+		RedeAutor ra = null;
+		
+		if(this.rano.containsKey(ano)) {
+			ra = this.rano.get(ano);
+			ra.insereAutores(a,ca);
+		} else {
+			ra = new RedeAutor();
+			ra.insereAutores(a, ca);
+			this.rano.put(ano, ra);		
+		}
+	}
+	
 }
