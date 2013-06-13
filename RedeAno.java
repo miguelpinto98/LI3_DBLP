@@ -5,29 +5,41 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.TreeMap;
 
 public class RedeAno {
 	private TreeMap<Integer, RedeAutor> rano;
+	private int nautores;
+	private int nartunicoaut;
 	
 	public RedeAno() {
 		this.rano = new TreeMap<>();
+		this.nautores = 0;
+		this.nartunicoaut = 0;
 	}
 	
-	public RedeAno(TreeMap<Integer, RedeAutor> tra) {
+	public RedeAno(TreeMap<Integer, RedeAutor> tra, int naut, int nunico) {
 		this.rano = new TreeMap<>();
-		
 		for(Integer n : tra.keySet()) {
 			RedeAutor aux = tra.get(n);
 			this.rano.put(n, aux.clone());
 		}
+		this.nautores = naut;
+		this.nartunicoaut = nunico;
 	} 
 	
 	public RedeAno(RedeAno ra) {
 		this.rano = ra.getRedeAno();
+		this.nautores = ra.getNumeroAutores();
+		this.nartunicoaut = ra.getNumeroArtigosUnicoAutor();
 	}
 	
-	private TreeMap<Integer, RedeAutor> getRedeAno() {
+	public int getNumeroArtigosUnicoAutor() {
+		return this.nartunicoaut;
+	}
+
+	public TreeMap<Integer, RedeAutor> getRedeAno() {
 		TreeMap<Integer, RedeAutor> aux = new TreeMap<>();
 		
 		for(Integer n : this.rano.keySet()) {
@@ -35,6 +47,18 @@ public class RedeAno {
 			aux.put(n, ra.clone());
 		}
 		return aux;
+	}
+	
+	public int getNumeroAutores() {
+		return this.nautores;
+	}
+	
+	public void setNumeroAutores(int n) {
+		this.nautores = n;
+	}
+	
+	public void setNumeroArtigosUnicoAutor(int nunico) {
+		this.nartunicoaut = nunico;
 	}
 
 	public RedeAno clone() {
@@ -80,11 +104,11 @@ public class RedeAno {
         f.close();
 	}
 	
-	public int keyAnoInferior() {
+	public int anoInferior() {
 		return this.rano.firstKey();
 	}
 	
-	public int keyAnoSuperior() {
+	public int anoSuperior() {
 		return this.rano.lastKey();
 	}
 	
@@ -100,5 +124,30 @@ public class RedeAno {
 			this.rano.put(ano, ra);		
 		}
 	}
+
+	public void addNumeroAutores(int tam) {
+		this.setNumeroAutores(this.getNumeroAutores()+tam);
+	}
 	
+	public void addNumeroArtigosUnicoAutor() {
+		this.setNumeroArtigosUnicoAutor(this.getNumeroArtigosUnicoAutor()+1);
+	} 
+	
+	public HashSet<String> AutoresEntreAnos(int anoi, int anof) {
+		HashSet<String> laut = new HashSet<>();
+		
+		for(Integer i : this.rano.keySet()) {
+			if(i>=anoi && i<=anof)
+				this.rano.get(i).autoresAno(laut);
+		}
+		
+		return laut;
+	}
+	
+	public void listaAutoresEntreAnos(int anoi, int anof) {
+		HashSet<String> lautores = this.AutoresEntreAnos(anoi, anof);
+		
+		for(String s : lautores)
+			System.out.println(s);
+	}
 }

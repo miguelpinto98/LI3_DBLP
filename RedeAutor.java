@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -65,7 +66,7 @@ public class RedeAutor {
 		return s.toString();
 	}
 
-	public void insereAutores(Autor a, ArrayList<Autor> ca) {
+	public void insereAutores(Autor a, ArrayList<Autor> ca) { // !
 		ArrayList<Autor> al = null;
 		
 		if(this.rautor.containsKey(a)) {
@@ -73,7 +74,7 @@ public class RedeAutor {
 			this.rautor.get(a).addAll(ca); //teste
 		} else {
 			al = new ArrayList<>();
-			al.addAll(ca);
+			al.addAll(ca);					//teste
 			this.rautor.put(a, al);
 		}
 		
@@ -89,5 +90,11 @@ public class RedeAutor {
 				at.addArtigo();
 				encontrou = true;
 			}
+	}
+
+	public void autoresAno(HashSet<String> laut) {
+		for(Autor a : this.rautor.keySet())
+			if(!(laut.contains(a.getNomeAutor())))
+				laut.add(a.getNomeAutor());
 	}
 }
