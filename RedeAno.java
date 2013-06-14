@@ -133,21 +133,59 @@ public class RedeAno {
 		this.setNumeroArtigosUnicoAutor(this.getNumeroArtigosUnicoAutor()+1);
 	} 
 	
-	public HashSet<String> AutoresEntreAnos(int anoi, int anof) {
-		HashSet<String> laut = new HashSet<>();
+	public TreeMap<Integer, HashSet<String>> AutoresEntreAnos(int anoi, int anof) {
+		TreeMap<Integer,HashSet<String>> laut = new TreeMap<>();
 		
 		for(Integer i : this.rano.keySet()) {
-			if(i>=anoi && i<=anof)
-				this.rano.get(i).autoresAno(laut);
+			if(i>=anoi && i<=anof) {
+				HashSet<String> la = this.rano.get(i).autoresAno();
+				laut.put(i, la);
+			}
 		}
-		
 		return laut;
 	}
 	
-	public void listaAutoresEntreAnos(int anoi, int anof) {
-		HashSet<String> lautores = this.AutoresEntreAnos(anoi, anof);
+	public HashSet<String> AutoresPorTodosAnos(int anoi, int anof) {
+		TreeMap<Integer, HashSet<String>> lautores = this.AutoresEntreAnos(anoi, anof);
+		int n = lautores.firstKey();
+		HashSet<String> hs = lautores.get(n), aux;
 		
-		for(String s : lautores)
-			System.out.println(s);
+		for(Integer i : lautores.keySet()) {
+			aux = new HashSet<>();
+			for(String s : lautores.get(i)) {
+				if(hs.contains(s))
+					aux.add(s);
+				}
+			hs = aux;
+		}
+		return hs;
 	}
+
+	public TreeMap<Integer, Integer> listaPublicacoesPorAno() {
+		TreeMap<Integer, Integer> lpa = new TreeMap<>();
+		
+		for(Integer i : this.rano.keySet())
+			lpa.put(i, this.rano.get(i).getNumeroPublicacoes());
+		
+		return lpa;
+	}
+
+	public void addNumeroPublicacoesAno(int ano) {
+		this.rano.get(ano).addNumeroPublicacoes();
+	}
+	
+	
+	public int coisa() {
+		HashSet<String> hsa = new HashSet<>();
+		HashSet<String> hsb = new HashSet<>();
+		
+		for(RedeAutor ra : this.rano.values()) {
+			ra.verificaAutoresPublicaramSozinhos(hsa, hsb);
+		}
+		return hsa.size();
+	}
+	
+	
+	
+	
 }

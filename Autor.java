@@ -3,6 +3,7 @@ public class Autor {
 	private String nome;
 	private int nartigos;
 	
+	
 	public Autor() {
 		this.nome = "";
 		this.nartigos = 1;

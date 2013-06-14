@@ -8,6 +8,7 @@ import static java.lang.System.out;
 public class Utils {
 	
 	public static HashSet<Autor> nome = new HashSet<>();
+	public static int res = 0;
 	
 	public static ArrayList<String> leLinhasScanner(String fichName) {
 		ArrayList<String> linhas = new ArrayList<String>();
@@ -35,21 +36,49 @@ public class Utils {
 		ArrayList<Autor> ca = new ArrayList<>();
 		int tam = str.length-1, ano = Integer.parseInt(str[tam]);
 		
-		ra.addNumeroAutores(tam);
-		
-		if(tam==1)
-			ra.addNumeroArtigosUnicoAutor();
-		
 		for(int i=0; i<tam; i++) {
 			Autor a = new Autor(str[i]);
 			ca = new ArrayList<>();
-			nome.add(a);
+			if(nome.contains(a))
+				res++;
+			else
+				nome.add(a);
+			
 			for(int j=0; j<tam; j++) {
 				if(i!=j)
 					ca.add(new Autor(str[j]));
 			}
 			ra.insereRedeAno(ano, a, ca);
+			//a.getRedeAno().get(ano).
 			//System.out.println("Ano: "+ano+"\nAutor: "+a+"\nCoAutores: "+ca.toString());
-		}		
+		}
+		if(tam==1)
+			ra.addNumeroArtigosUnicoAutor();
+		ra.addNumeroAutores(tam);
+		ra.addNumeroPublicacoesAno(ano);
+	}
+	
+	public static int verificaDuplicados(String fichName) {
+		HashSet<String> linhas = new HashSet<String>();
+		String s = null;
+		int res = 0;
+		
+		Scanner fichScan = null; 
+		try {
+			fichScan = new Scanner(new FileReader(fichName));
+            fichScan.useDelimiter(System.getProperty("line.separator"));
+            while (fichScan.hasNext()) {
+            	s=fichScan.next();
+            	if(linhas.contains(s))
+            		res++;
+            	else
+            		linhas.add(s);
+            }
+            fichScan.close();
+		} 
+		catch(IOException e) {out.println(e.getMessage()); return 0; }
+		catch(Exception e) {out.println(e.getMessage()); return 0; }
+				
+		return res;
 	}
 }
