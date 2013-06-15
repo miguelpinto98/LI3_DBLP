@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class RedeAutor {
 	private HashMap<Autor,ArrayList<Autor>> rautor;
@@ -138,6 +139,32 @@ public class RedeAutor {
 			else {
 				hist.add(a.getNomeAutor());
 			}	
+		}
+	}
+	
+	public void lindo(HashMap<Autor, ArrayList<Autor>> ppp) { //teste
+		
+		for(Autor a : this.rautor.keySet()) {
+			if(ppp.containsKey(a))
+				ppp.get(a).addAll(this.rautor.get(a));
+			else {
+				ArrayList<Autor> aux = new ArrayList<>();
+				aux = this.rautor.get(a);
+				ppp.put(a, aux);
+			}
+		}
+		
+	}
+	
+	public void topRedeAutor(TreeMap<String, Integer> tra) {
+		int res=0;
+		
+		for(Autor a : this.rautor.keySet()) {
+			if(tra.containsKey(a.getNomeAutor()))
+				res=tra.get(a.getNomeAutor())+a.getNumeroArtigos();
+			else 
+				res=a.getNumeroArtigos();
+			tra.put(a.getNomeAutor(), res);
 		}
 	}
 }

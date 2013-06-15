@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.TreeMap;
 
@@ -154,8 +155,7 @@ public class RedeAno {
 			aux = new HashSet<>();
 			for(String s : lautores.get(i)) {
 				if(hs.contains(s))
-					aux.add(s);
-				}
+					aux.add(s);				}
 			hs = aux;
 		}
 		return hs;
@@ -182,10 +182,35 @@ public class RedeAno {
 		for(RedeAutor ra : this.rano.values()) {
 			ra.verificaAutoresPublicaramSozinhos(hsa, hsb);
 		}
-		return hsa.size();
+		return hsb.size();
 	}
 	
+	public HashMap<Autor, ArrayList<Autor>> autorPorCoautores() {
+		HashMap<Autor, ArrayList<Autor>> aux = new HashMap<>();
+		
+		for(RedeAutor ra : this.rano.values())
+			ra.lindo(aux);
 	
+		return aux;
+	}
 	
+	public int unicoAutor() {
+		HashMap<Autor, ArrayList<Autor>> aux = this.autorPorCoautores();
+		int unico=0;
+		
+		for(ArrayList<Autor> ala : aux.values()) {
+			if(ala.size()==0)
+				unico++;
+		}
+		return unico;
+	}
 	
+	public TreeMap<String, Integer> topAutoresPorNome() {
+		TreeMap<String, Integer> aux = new TreeMap<>();
+		
+		for(RedeAutor ra : this.rano.values())
+			ra.topRedeAutor(aux);
+		
+		return aux;
+	}	
 }

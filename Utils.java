@@ -9,6 +9,7 @@ public class Utils {
 	
 	public static HashSet<Autor> nome = new HashSet<>();
 	public static int res = 0;
+	public static int xxx = 0;
 	
 	public static ArrayList<String> leLinhasScanner(String fichName) {
 		ArrayList<String> linhas = new ArrayList<String>();
@@ -36,26 +37,23 @@ public class Utils {
 		ArrayList<Autor> ca = new ArrayList<>();
 		int tam = str.length-1, ano = Integer.parseInt(str[tam]);
 		
+		
 		for(int i=0; i<tam; i++) {
 			Autor a = new Autor(str[i]);
-			ca = new ArrayList<>();
-			if(nome.contains(a))
-				res++;
-			else
+			if(!(nome.contains(a)))
 				nome.add(a);
-			
+			ca = new ArrayList<>();			
 			for(int j=0; j<tam; j++) {
 				if(i!=j)
 					ca.add(new Autor(str[j]));
 			}
 			ra.insereRedeAno(ano, a, ca);
-			//a.getRedeAno().get(ano).
-			//System.out.println("Ano: "+ano+"\nAutor: "+a+"\nCoAutores: "+ca.toString());
 		}
 		if(tam==1)
 			ra.addNumeroArtigosUnicoAutor();
 		ra.addNumeroAutores(tam);
 		ra.addNumeroPublicacoesAno(ano);
+		xxx=nome.size();
 	}
 	
 	public static int verificaDuplicados(String fichName) {

@@ -58,9 +58,9 @@ public class Autor {
 	} 
 
 	public int hashCode() {
-		final int prime = 31;
+		final int prime = 41;
 		int result = 1;
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((this.nome == null) ? 0 : this.nome.hashCode());
 		return result;
 	}
 	
