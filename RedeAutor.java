@@ -167,4 +167,20 @@ public class RedeAutor {
 			tra.put(a.getNomeAutor(), res);
 		}
 	}
+
+	public void JuntaCoAutores(HashMap<String, Integer> aux) {
+		String coaut = null;
+		int res = 0;
+		
+		for(Autor a : this.rautor.keySet())
+			for(Autor co : this.rautor.get(a)) {
+				coaut = a.getNomeAutor()+", "+co.getNomeAutor();
+				if(aux.containsKey(coaut))
+					res = aux.get(coaut)+1;
+				else
+					res = 1;
+				aux.put(coaut, res);
+			}
+				
+	}
 }

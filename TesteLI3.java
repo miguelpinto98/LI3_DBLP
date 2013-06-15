@@ -1,5 +1,6 @@
 import static java.lang.System.out;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.TreeMap;
 
@@ -29,6 +30,8 @@ public class TesteLI3 {
 	    out.println("1.2 Total Autores que publicaram a solo: " + ra.unicoAutor());
 	    out.println("1.2 Total Autores que nuca publicaram a solo: "+ ra.coisa());
 	    
+	    int anoi = 2010;
+	    int anof = 2012;
 	    
 	    out.println("\n1.3 ");
 	    TreeMap<Integer, Integer> lpa = ra.listaPublicacoesPorAno();
@@ -36,8 +39,18 @@ public class TesteLI3 {
 	    	out.println("Ano: "+i+" Publicacoes: "+lpa.get(i));
 	    
 	    //System.out.println(ra.toString());
-	    out.println("\n2.1 ");
-		HashSet<String> hs = ra.AutoresPorTodosAnos(1985,1999);
+	    out.println("\n2.1 Top autores ");
+	    ArrayList<String> tp = ra.topAutoresPorNome(anoi, anof,10);
+		for(String s : tp)
+			System.out.println(s);
+		
+	    out.println("\n2.2 Top Co-Autores ");
+	    HashMap<String, Integer> tca = ra.topCoAutores(anoi, anof, 10);
+	    for(String s : tca.keySet())
+	    	System.out.println(tca.get(s)+s);
+	    
+	    out.println("\n2.1 Autores que publicaram artigos entre: 1985 e 1999");
+		HashSet<String> hs = ra.AutoresPorTodosAnos(anoi,anof);
 	    for(String s : hs)
 	    	System.out.println(s);
 	    

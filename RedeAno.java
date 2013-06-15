@@ -205,12 +205,49 @@ public class RedeAno {
 		return unico;
 	}
 	
-	public TreeMap<String, Integer> topAutoresPorNome() {
-		TreeMap<String, Integer> aux = new TreeMap<>();
+	public ArrayList<String> topAutoresPorNome(int anoi, int anof, int n) {
+		TreeMap<String, Integer> aux = new TreeMap<>(), aux2 = new TreeMap<>();
+		int j=0, max=0, num;
+		ArrayList<String> aut = new ArrayList<>();
 		
-		for(RedeAutor ra : this.rano.values())
-			ra.topRedeAutor(aux);
+		for(Integer i : this.rano.keySet())
+			if(i>=anoi && i<=anof)
+				this.rano.get(i).topRedeAutor(aux);
+		
+		max=maximoValor(aux);
+		while(j<n) {
+			for(String s : aux.keySet()) {
+				if((num=aux.get(s))==max && j<n) {
+					aut.add(num+" - "+s);
+					j++;
+				}
+				else
+					aux2.put(s, num);
+			}
+			aux = aux2;
+			aux2 = new TreeMap<>();
+			max = maximoValor(aux);
+		}
+		return aut;
+	}
+
+	private int maximoValor(TreeMap<String, Integer> tmax) {
+		int max = 0;
+		
+		for(Integer i : tmax.values()) {
+			if(i>max)
+				max = i;
+		}
+		return max;
+	}
+	
+	public HashMap<String, Integer> topCoAutores(int anoi, int anof, int n) {
+		HashMap<String, Integer> aux = new HashMap<>();
+		
+		for(Integer i : this.rano.keySet())
+			if(i>=anoi && i<=anof)
+				this.rano.get(i).JuntaCoAutores(aux);
 		
 		return aux;
-	}	
+	}
 }
