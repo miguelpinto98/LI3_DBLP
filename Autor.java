@@ -1,27 +1,33 @@
+import java.io.Serializable;
 
-public class Autor {
+@SuppressWarnings("serial")
+public class Autor implements Serializable{
 	private String nome;
 	private int nartigos;
-	
+	private boolean nuncasolo;
 	
 	public Autor() {
 		this.nome = "";
 		this.nartigos = 1;
+		this.nuncasolo = false;
 	}
 	
 	public Autor(String nome) {
 		this.nome = nome;
 		this.nartigos = 1;
+		this.nuncasolo = false;
 	}
 	
-	public Autor(String nome, int nart) {
+	public Autor(String nome, int nart, boolean solo) {
 		this.nome = nome;
 		this.nartigos = nart;
+		this.nuncasolo = solo;
 	}
 	
 	public Autor(Autor a) {
 		this.nome = a.getNomeAutor();
 		this.nartigos = a.getNumeroArtigos();
+		this.nuncasolo = a.getEscreveuSolo();
 	}
 
 	public String getNomeAutor() {
@@ -32,12 +38,20 @@ public class Autor {
 		return this.nartigos;
 	}
 	
+	public boolean getEscreveuSolo() {
+		return this.nuncasolo;
+	}
+	
 	public void setNomeAutor(String nome) {
 		this.nome = nome;
 	}
 	
 	public void setNumeroArtigo(int n) {
 		this.nartigos = n;
+	}
+	
+	public void setEscreveuSolo(boolean ssolo) {
+		this.nuncasolo = ssolo;
 	}
 	
 	public String toString() {

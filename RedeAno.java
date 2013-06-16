@@ -4,20 +4,29 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
-public class RedeAno {
+@SuppressWarnings("serial")
+public class RedeAno implements Serializable {
 	private TreeMap<Integer, RedeAutor> rano;
 	private int nautores;
 	private int nartunicoaut;
+	private String nomefile;
+	private int totalart;
+	private int nndist;
 	
 	public RedeAno() {
 		this.rano = new TreeMap<>();
 		this.nautores = 0;
 		this.nartunicoaut = 0;
+		this.nomefile = "";
+		this.totalart = 0;
+		this.nndist = 0;
 	}
 	
 	public RedeAno(TreeMap<Integer, RedeAutor> tra, int naut, int nunico) {
@@ -28,12 +37,30 @@ public class RedeAno {
 		}
 		this.nautores = naut;
 		this.nartunicoaut = nunico;
+		this.nomefile = "";
+		this.totalart = 0;
+		this.nndist = 0;
 	} 
 	
 	public RedeAno(RedeAno ra) {
 		this.rano = ra.getRedeAno();
 		this.nautores = ra.getNumeroAutores();
 		this.nartunicoaut = ra.getNumeroArtigosUnicoAutor();
+		this.nomefile = ra.getNomeFicheiro();
+		this.totalart = ra.getTotalArtigos();
+		this.nndist = ra.getNomesDistintos();
+	}
+	
+	public int getNomesDistintos() {
+		return this.nndist;
+	}
+	
+	public int getTotalArtigos() {
+		return this.totalart;
+	}
+
+	public String getNomeFicheiro() {
+		return this.nomefile;
 	}
 	
 	public int getNumeroArtigosUnicoAutor() {
@@ -54,12 +81,24 @@ public class RedeAno {
 		return this.nautores;
 	}
 	
+	public void setNomesDistintos(int ndist) {
+		this.nndist = ndist;
+	}
+	
+	public void setNomeFicheiro(String s) {
+		this.nomefile = s;
+	}
+	
 	public void setNumeroAutores(int n) {
 		this.nautores = n;
 	}
 	
 	public void setNumeroArtigosUnicoAutor(int nunico) {
 		this.nartunicoaut = nunico;
+	}
+	
+	public void setTotalArtigos(int nart) {
+		this.totalart = nart;
 	}
 
 	public RedeAno clone() {
@@ -85,21 +124,31 @@ public class RedeAno {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public void carregaRM(String file) throws FileNotFoundException, IOException, ClassNotFoundException {
+	public void carregaObj(String file) throws FileNotFoundException, IOException, ClassNotFoundException {
         FileInputStream f = new FileInputStream(file);
         ObjectInputStream o = new ObjectInputStream(f);
         
         this.rano = (TreeMap<Integer, RedeAutor>) o.readObject();
+        this.nautores = (Integer) o.readInt();
+        this.nartunicoaut = (Integer) o.readInt();
+        this.nomefile = file;
+        this.totalart = (Integer) o.readInt();
+        this.nndist = (Integer) o.readInt();
 
         o.close();
         f.close();
 	}
 	
-	public void gravaRM(String file) throws FileNotFoundException, IOException {
+	public void gravaObj(String file) throws FileNotFoundException, IOException {
         FileOutputStream f = new FileOutputStream(file);
         ObjectOutputStream o = new ObjectOutputStream(f);
         
         o.writeObject(this.rano);
+        o.writeInt(this.nautores);
+        o.writeInt(this.nartunicoaut);
+        o.writeChars(this.nomefile);
+        o.writeInt(this.totalart);
+        o.writeInt(this.nndist);
 
         o.close();
         f.close();
@@ -113,15 +162,15 @@ public class RedeAno {
 		return this.rano.lastKey();
 	}
 	
-	public void insereRedeAno(int ano, Autor a, ArrayList<Autor> ca) {
+	public void insereRedeAno(int ano, Autor a, ArrayList<Autor> ca, boolean flag) {
 		RedeAutor ra = null;
 		
 		if(this.rano.containsKey(ano)) {
 			ra = this.rano.get(ano);
-			ra.insereAutores(a,ca);
+			ra.insereAutores(a, flag, ca);
 		} else {
 			ra = new RedeAutor();
-			ra.insereAutores(a, ca);
+			ra.insereAutores(a, flag, ca);
 			this.rano.put(ano, ra);		
 		}
 	}
@@ -177,12 +226,11 @@ public class RedeAno {
 	
 	public int coisa() {
 		HashSet<String> hsa = new HashSet<>();
-		HashSet<String> hsb = new HashSet<>();
 		
 		for(RedeAutor ra : this.rano.values()) {
-			ra.verificaAutoresPublicaramSozinhos(hsa, hsb);
+			ra.verificaAutoresPublicaramSozinhos(hsa);
 		}
-		return hsb.size();
+		return hsa.size();
 	}
 	
 	public HashMap<Autor, ArrayList<Autor>> autorPorCoautores() {
@@ -249,5 +297,34 @@ public class RedeAno {
 				this.rano.get(i).JuntaCoAutores(aux);
 		
 		return aux;
+	}
+	
+	public TreeSet<String> coautoresComunsDestesAutores(ArrayList<String> al, int anoi, int anof) {
+		TreeSet<String> tco = new TreeSet<>(), ts = new TreeSet<>();
+		HashMap<String, ArrayList<String>> aux = new HashMap<>(), aux2 = new HashMap<>();
+		
+		for(Integer i : this.rano.keySet())
+			if(i>=anoi && i<=anof)
+				this.rano.get(i).coautoresNesteAno(aux);
+		
+		for(String s : al)
+			if(aux.containsKey(s))
+				aux2.put(s, aux.get(s));
+		
+		for(ArrayList<String> als : aux2.values()) {
+			if(tco.isEmpty())
+				for(String s : als)
+					tco.add(s);
+			else {
+				for(String s : als) {
+					if(tco.contains(s))
+						ts.add(s);
+				}
+				tco=ts;
+				ts=new TreeSet<>();
+			}
+				
+		}
+		return tco;
 	}
 }

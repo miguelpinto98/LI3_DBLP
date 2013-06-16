@@ -5,13 +5,11 @@ import java.util.Scanner;
 
 import static java.lang.System.out;
 
-public class Utils {
-	
+@SuppressWarnings("serial")
+public class Utils implements Serializable{
 	public static HashSet<Autor> nome = new HashSet<>();
-	public static int res = 0;
-	public static int xxx = 0;
 	
-	public static ArrayList<String> leLinhasScanner(String fichName) {
+	public static ArrayList<String> leLinhasScanner(String fichName) throws FileNotFoundException{
 		ArrayList<String> linhas = new ArrayList<String>();
 		Scanner fichScan = null; 
 		try {
@@ -36,10 +34,18 @@ public class Utils {
 		String[] str = linha.split(", ");
 		ArrayList<Autor> ca = new ArrayList<>();
 		int tam = str.length-1, ano = Integer.parseInt(str[tam]);
+		boolean flag=false;
 		
 		
 		for(int i=0; i<tam; i++) {
 			Autor a = new Autor(str[i]);
+			
+			if(tam==1) {
+				ra.addNumeroArtigosUnicoAutor();
+				flag=true;
+				a.setEscreveuSolo(flag);
+			}
+			
 			if(!(nome.contains(a)))
 				nome.add(a);
 			ca = new ArrayList<>();			
@@ -47,13 +53,11 @@ public class Utils {
 				if(i!=j)
 					ca.add(new Autor(str[j]));
 			}
-			ra.insereRedeAno(ano, a, ca);
+			ra.insereRedeAno(ano, a, ca, flag);
 		}
-		if(tam==1)
-			ra.addNumeroArtigosUnicoAutor();
 		ra.addNumeroAutores(tam);
 		ra.addNumeroPublicacoesAno(ano);
-		xxx=nome.size();
+		ra.setNomesDistintos(nome.size());
 	}
 	
 	public static int verificaDuplicados(String fichName) {

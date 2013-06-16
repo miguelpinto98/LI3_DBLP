@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -5,7 +6,8 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeMap;
 
-public class RedeAutor {
+@SuppressWarnings("serial")
+public class RedeAutor implements Serializable{
 	private HashMap<Autor,ArrayList<Autor>> rautor;
 	private int npub;
 	
@@ -79,11 +81,11 @@ public class RedeAutor {
 		return s.toString();
 	}
 
-	public void insereAutores(Autor a, ArrayList<Autor> ca) { // !
+	public void insereAutores(Autor a, boolean flag, ArrayList<Autor> ca) { // !
 		ArrayList<Autor> al = null;
 		
 		if(this.rautor.containsKey(a)) {
-			this.masquelixo(this.rautor.keySet(),a);
+			this.masquelixo(this.rautor.keySet(),a, flag);
 			this.rautor.get(a).addAll(ca); //teste
 		} else {
 			al = new ArrayList<>();
@@ -93,7 +95,7 @@ public class RedeAutor {
 		
 	}
 
-	public void masquelixo(Set<Autor> set, Autor a) { //teste
+	public void masquelixo(Set<Autor> set, Autor a, boolean flag) { //teste
 		Iterator<Autor> it = set.iterator();
 		boolean encontrou = false;
 		Autor at = null;
@@ -101,6 +103,7 @@ public class RedeAutor {
 		while(it.hasNext() && !encontrou)
 			if((at=it.next()).equals(a)) {
 				at.addArtigo();
+				//at.setEscreveuSolo(flag);
 				encontrou = true;
 			}
 	}
@@ -118,7 +121,7 @@ public class RedeAutor {
 	public void addNumeroPublicacoes() {
 		this.setNumeroPublicacoes(this.getNumeroPublicacoes()+1);
 	}
-	
+	/*
 	public void verificaAutoresPublicaramSozinhos(HashSet<String> up, HashSet<String> hist) {
 		
 		for(Autor a : this.rautor.keySet()) {
@@ -140,6 +143,22 @@ public class RedeAutor {
 				hist.add(a.getNomeAutor());
 			}	
 		}
+	}*/
+	
+
+	public void verificaAutoresPublicaramSozinhos(HashSet<String> hsa) {
+		
+		for(Autor a : this.rautor.keySet()) {
+			if(a.getEscreveuSolo()==false) {
+				if(hsa.contains(a.getNomeAutor()))
+					;
+				else
+					hsa.add(a.getNomeAutor());
+			} else 
+				if(hsa.contains(a.getNomeAutor()))
+					hsa.remove(a.getNomeAutor());
+		}
+		
 	}
 	
 	public void lindo(HashMap<Autor, ArrayList<Autor>> ppp) { //teste
@@ -169,18 +188,37 @@ public class RedeAutor {
 	}
 
 	public void JuntaCoAutores(HashMap<String, Integer> aux) {
-		String coaut = null;
+		String coaut = null, coaut2 = null;
 		int res = 0;
 		
-		for(Autor a : this.rautor.keySet())
+		for(Autor a : this.rautor.keySet()) {
 			for(Autor co : this.rautor.get(a)) {
 				coaut = a.getNomeAutor()+", "+co.getNomeAutor();
+				coaut2 = co.getNomeAutor()+", "+a.getNomeAutor();
+				
 				if(aux.containsKey(coaut))
 					res = aux.get(coaut)+1;
-				else
-					res = 1;
-				aux.put(coaut, res);
+				else {
+					res=1;
+				}
 			}
+			aux.put(coaut, res);
+		}		
+	}
+
+	public void coautoresNesteAno(HashMap<String, ArrayList<String>> aux) {
+		
+		for(Autor a : this.rautor.keySet())
+			if(aux.containsKey(a.getNomeAutor())) {
+				for(Autor ca : this.rautor.get(a))
+					aux.get(a.getNomeAutor()).add(ca.getNomeAutor());
 				
+			} else {
+				ArrayList<String> al = new ArrayList<>();
+				for(Autor ca : this.rautor.get(a))
+					al.add(ca.getNomeAutor());
+				
+				aux.put(a.getNomeAutor(), al);
+			}
 	}
 }
