@@ -284,14 +284,52 @@ public class RedeAno implements Serializable {
 		return max;
 	}
 	
-	public HashMap<String, Integer> topCoAutores(int anoi, int anof, int n) {
-		HashMap<String, Integer> aux = new HashMap<>();
-		
+	public ArrayList<String> topCoAutores(int anoi, int anof, int n) {
+		HashMap<String, ArrayList<String>> aux = new HashMap<>();
+		ArrayList<String> test = new ArrayList<>();
+
 		for(Integer i : this.rano.keySet())
 			if(i>=anoi && i<=anof)
 				this.rano.get(i).JuntaCoAutores(aux);
 		
-		return aux;
+		TreeMap<String, Integer> taut = new TreeMap<>(), taut2 = new TreeMap<>();
+		String a1 = null, a2 = null;
+		int res=0;
+		for(String s : aux.keySet()) {
+			res=0;
+			for(String ss : aux.get(s)) {
+				a1 = s+", "+ss;
+				a2 = ss+", "+s;
+				if(taut.containsKey(a1))
+					res = taut.get(a1)+1;
+				else {
+					if(taut.containsKey(a2)) {	
+					res = taut.get(a2);
+					a1 = a2;
+					} else
+						res=1;
+				}
+				taut.put(a1, res);	
+				}
+			}
+		
+		int j=0, max=0, num;
+		max=maximoValor(taut);
+		while(j<n) {
+			for(String s : taut.keySet()) {
+				if((num=taut.get(s))==max && j<n) {
+					test.add(num+" - "+s);
+					j++;
+				}
+				else
+					taut2.put(s, num);
+			}
+			taut = taut2;
+			taut2 = new TreeMap<>();
+			max = maximoValor(taut);
+		}
+		
+		return test;
 	}
 	
 	public TreeSet<String> coautoresComunsDestesAutores(ArrayList<String> al, int anoi, int anof) {

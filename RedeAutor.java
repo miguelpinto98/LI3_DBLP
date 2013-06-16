@@ -165,24 +165,20 @@ public class RedeAutor implements Serializable{
 		}
 	}
 
-	public void JuntaCoAutores(HashMap<String, Integer> aux) {
-		@SuppressWarnings("unused")
-		String coaut = null, coaut2 = null;
-		int res = 0;
+	public void JuntaCoAutores(HashMap<String, ArrayList<String>> aux) {
 		
 		for(Autor a : this.rautor.keySet()) {
-			for(Autor co : this.rautor.get(a)) {
-				coaut = a.getNomeAutor()+", "+co.getNomeAutor();
-				coaut2 = co.getNomeAutor()+", "+a.getNomeAutor();
-				
-				if(aux.containsKey(coaut))
-					res = aux.get(coaut)+1;
-				else {
-					res=1;
-				}
+			if(aux.containsKey(a.getNomeAutor())) {
+				for(Autor co : this.rautor.get(a))
+					aux.get(a.getNomeAutor()).add(co.getNomeAutor());
 			}
-			aux.put(coaut, res);
-		}		
+			else {
+				ArrayList<String> als= new ArrayList<>();
+				for(Autor co : this.rautor.get(a))
+					als.add(co.getNomeAutor());
+				aux.put(a.getNomeAutor(), als);
+			}				
+		}	
 	}
 
 	public void coautoresNesteAno(HashMap<String, ArrayList<String>> aux) {

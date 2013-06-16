@@ -35,8 +35,9 @@ public class TesteLI3 {
     				    long fim = System.nanoTime();
     				    out.println("\nTempo de Leitura: " + (fim - inicio)/1.0E09 + " segs.\n");
     				    MenuPrincipal(ra);
-    					flag=true;
- 				   	} catch(FileNotFoundException e) {
+    					flag=false;
+    				} catch(NullPointerException e) {}	
+ 				   	  catch(FileNotFoundException e) {
  				   		System.out.println("Ficheiro nao encontrado, insira novamente!");
  				   	}
  			    } while(flag);
@@ -48,9 +49,8 @@ public class TesteLI3 {
 	    				try {
 	    					str = MenuCarregaObjecto();
 	    					ra = RedeAno.carregaObj(str);
-	    					//ra.setNomeFicheiro(str);
 	    				    MenuPrincipal(ra);
-	    					flag=true;
+	    					flag=false;
 	 				   	} catch(FileNotFoundException e) {
 	 				   		System.out.println("Ficheiro nao encontrado, insira novamente!");
 	 				   	}
@@ -84,7 +84,7 @@ public class TesteLI3 {
 		System.out.println("#                                                       #");
 		System.out.println("#  * Insira \"1\" caso prentenda carregar o ficheiro      #");
 		System.out.println("#  * default (\"publicx.obj\"), caso contrário            #");
-		System.out.println("#  * insira o nome do ficheiro a ser carregado.         #");
+		System.out.println("#  * insira o nome do ficheiro a ser carregado .obj       #");
 		str=null;
 		if((str=s.next()).equals("1"))
 			return "publicx.obj";
@@ -95,9 +95,9 @@ public class TesteLI3 {
 	public static String MenuLeFicheiro() {
 		System.out.println("################### LER FICHEIRO TEXTO ##################");
 		System.out.println("#                                                       #");
-		System.out.println("#  * Insira \"1\" caso prentenda carregar o ficheiro      #");
+		System.out.println("#  * Insira \"1\" caso prentenda ler o ficheiro         #");
 		System.out.println("#  * default (\"publicx.txt\"), caso contrário insira     #");
-		System.out.println("#  * nome de outro ficheiro a ser carregado.            #");
+		System.out.println("#  * nome de outro ficheiro para ser lido .txt          #");
 		str=null;
 		if((str=s.next()).equals("1"))
 			return "publicx.txt";
@@ -196,13 +196,14 @@ public class TesteLI3 {
 			MenuConsultaAnos(ra2, ai, af);
 		}
 		if(x==2) {
-			System.out.println("################# TOP X PUBLICACOES #####################");
+			System.out.println("################## TOP X COAUTORES ######################");
 			System.out.println("#                                                       #");
 			System.out.print("#  * Defina x: ");
 			xx = s.nextInt();
-			HashMap<String, Integer> tca = ra.topCoAutores(ai, af, xx);
-		    for(String s : tca.keySet())
-		    	System.out.println(tca.get(s)+s);
+			ArrayList<String> tca = ra.topCoAutores(ai, af, xx);
+			System.out.println("#                                                       #");
+		    for(String s : tca)
+		    	System.out.println("#        "+s);
 			System.out.println("#                                                       #");
 			System.out.println("#########################################################");
 			MenuConsultaAnos(ra2, ai, af);
@@ -229,6 +230,11 @@ public class TesteLI3 {
 			MenuConsultaAnos(ra2, ai, af);
 		}
 		if(x==4) {
+			if(af-ai == 0) {
+				System.out.println("Necessario intervalo de anos maior!");
+				MenuConsultaAnos(ra2, ai, af);
+			}
+			else {
 			System.out.println("## AUTORES QUE PUBLICARAM SEMPRE ARTIGOS NO INTERVALO ###");
 			System.out.println("#                     ["+ai+","+af+"]                       #");
 			System.out.println("#                                                       #");			
@@ -238,6 +244,7 @@ public class TesteLI3 {
 			System.out.println("#                                                       #");
 			System.out.println("#########################################################");
 			MenuConsultaAnos(ra2, ai, af);
+			}
 		}
 		if(x==5)
 			MenuPrincipal(ra);
