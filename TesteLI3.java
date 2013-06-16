@@ -231,7 +231,7 @@ public class TesteLI3 {
 		}
 		if(x==4) {
 			if(af-ai == 0) {
-				System.out.println("Necessario intervalo de anos maior!");
+				System.out.println("Necessario intervalo de anos superior!");
 				MenuConsultaAnos(ra2, ai, af);
 			}
 			else {
