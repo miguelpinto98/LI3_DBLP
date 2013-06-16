@@ -19,6 +19,7 @@ public class RedeAno implements Serializable {
 	private String nomefile;
 	private int totalart;
 	private int nndist;
+	private int autumax;
 	
 	public RedeAno() {
 		this.rano = new TreeMap<>();
@@ -27,6 +28,7 @@ public class RedeAno implements Serializable {
 		this.nomefile = "";
 		this.totalart = 0;
 		this.nndist = 0;
+		this.autumax = 0;
 	}
 	
 	public RedeAno(TreeMap<Integer, RedeAutor> tra, int naut, int nunico, int talart,int nndist) {
@@ -40,6 +42,7 @@ public class RedeAno implements Serializable {
 		this.nomefile = "";
 		this.totalart = talart;
 		this.nndist = nndist;
+		this.autumax = 0;
 	} 
 	
 	public RedeAno(RedeAno ra) {
@@ -49,6 +52,7 @@ public class RedeAno implements Serializable {
 		this.nomefile = ra.getNomeFicheiro();
 		this.totalart = ra.getTotalArtigos();
 		this.nndist = ra.getNomesDistintos();
+		this.autumax = ra.getAutoresQueEscreveramUmaVezSolo();
 	}
 	
 	public int getNomesDistintos() {
@@ -123,32 +127,26 @@ public class RedeAno implements Serializable {
 		return this.rano.equals(ra.getRedeAno());
 	}
 	
-	@SuppressWarnings("unchecked")
-	public void carregaObj(String file) throws FileNotFoundException, IOException, ClassNotFoundException {
+	public static RedeAno carregaObj(String file) throws FileNotFoundException, IOException, ClassNotFoundException {
         FileInputStream f = new FileInputStream(file);
         ObjectInputStream o = new ObjectInputStream(f);
+        RedeAno ra = null;
         
-        this.rano = (TreeMap<Integer, RedeAutor>) o.readObject();
-        this.nautores = (int) o.readInt();
-        this.nartunicoaut = (int) o.readInt();
-        this.nomefile = "publicx.txt";
-        this.totalart = (int) o.readInt();
-        this.nndist = (int) o.readInt();
-        
+        Object obj = o.readObject();
+        if(obj.getClass().equals(RedeAno.class));
+        	ra = (RedeAno) obj;
+         
         o.close();
         f.close();
+        
+        return ra;
 	}
 	
 	public void gravaObj(String file) throws FileNotFoundException, IOException {
         FileOutputStream f = new FileOutputStream(file);
         ObjectOutputStream o = new ObjectOutputStream(f);
         
-        o.writeObject(this.rano);
-        o.writeInt(this.nautores);
-        o.writeInt(this.nartunicoaut);
-        o.writeChars(this.nomefile);
-        o.writeInt(this.totalart);
-        o.writeInt(this.nndist);
+        o.writeObject(this);
 
         o.flush();
         o.close();
@@ -164,15 +162,15 @@ public class RedeAno implements Serializable {
 		return this.rano.lastKey();
 	}
 	
-	public void insereRedeAno(int ano, Autor a, ArrayList<Autor> ca, boolean flag) {
+	public void insereRedeAno(int ano, Autor a, ArrayList<Autor> ca) {
 		RedeAutor ra = null;
 		
 		if(this.rano.containsKey(ano)) {
 			ra = this.rano.get(ano);
-			ra.insereAutores(a, flag, ca);
+			ra.insereAutores(a, ca);
 		} else {
 			ra = new RedeAutor();
-			ra.insereAutores(a, flag, ca);
+			ra.insereAutores(a, ca);
 			this.rano.put(ano, ra);		
 		}
 	}
@@ -226,20 +224,15 @@ public class RedeAno implements Serializable {
 	}
 	
 	
-	public int coisa() {
-		HashSet<String> hsa = new HashSet<>();
-		
-		for(RedeAutor ra : this.rano.values()) {
-			ra.verificaAutoresPublicaramSozinhos(hsa);
-		}
-		return hsa.size();
+	public int autEscrevemSolo() {	
+		return getNomesDistintos()-this.getAutoresQueEscreveramUmaVezSolo();
 	}
 	
 	public HashMap<Autor, ArrayList<Autor>> autorPorCoautores() {
 		HashMap<Autor, ArrayList<Autor>> aux = new HashMap<>();
 		
 		for(RedeAutor ra : this.rano.values())
-			ra.lindo(aux);
+			ra.autoresporcoautores(aux);
 	
 		return aux;
 	}
@@ -328,5 +321,30 @@ public class RedeAno implements Serializable {
 				
 		}
 		return tco;
+	}
+
+	public void addAutoresQueEscreveramUmaVezSolo(int size) {
+		this.setAutoresQueEscreveramUmaVezSolo(size);
+	}
+
+	public void setAutoresQueEscreveramUmaVezSolo(int size) {
+		this.autumax = size;
+	}
+	
+	public int getAutoresQueEscreveramUmaVezSolo() {
+		return this.autumax;
+	}
+	
+	public void addAutoresDistintos(int size) {
+		setNomesDistintos(size);
+	}
+	
+	public HashMap<String, HashSet<String>> autoresPorCoautoresInferior() {
+		HashMap<String, HashSet<String>> autporcoaut = new HashMap<>();
+		
+		for(RedeAutor ra : this.rano.values())
+			ra.juntaCoautoresInferioresX(autporcoaut);
+
+		return autporcoaut;
 	}
 }

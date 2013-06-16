@@ -81,21 +81,23 @@ public class RedeAutor implements Serializable{
 		return s.toString();
 	}
 
-	public void insereAutores(Autor a, boolean flag, ArrayList<Autor> ca) { // !
+	public void insereAutores(Autor a, ArrayList<Autor> ca) {
 		ArrayList<Autor> al = null;
 		
 		if(this.rautor.containsKey(a)) {
-			this.masquelixo(this.rautor.keySet(),a, flag);
-			this.rautor.get(a).addAll(ca); //teste
+			this.AdicionaArtigoAutor(this.rautor.keySet(),a);
+			for(Autor co : ca)
+				this.rautor.get(a).add(co.clone());
 		} else {
 			al = new ArrayList<>();
-			al.addAll(ca);					//teste
+			for(Autor co : ca)
+				al.add(co.clone());
 			this.rautor.put(a, al);
 		}
 		
 	}
 
-	public void masquelixo(Set<Autor> set, Autor a, boolean flag) { //teste
+	public void AdicionaArtigoAutor(Set<Autor> set, Autor a) {
 		Iterator<Autor> it = set.iterator();
 		boolean encontrou = false;
 		Autor at = null;
@@ -103,7 +105,6 @@ public class RedeAutor implements Serializable{
 		while(it.hasNext() && !encontrou)
 			if((at=it.next()).equals(a)) {
 				at.addArtigo();
-				//at.setEscreveuSolo(flag);
 				encontrou = true;
 			}
 	}
@@ -121,31 +122,7 @@ public class RedeAutor implements Serializable{
 	public void addNumeroPublicacoes() {
 		this.setNumeroPublicacoes(this.getNumeroPublicacoes()+1);
 	}
-	/*
-	public void verificaAutoresPublicaramSozinhos(HashSet<String> up, HashSet<String> hist) {
-		
-		for(Autor a : this.rautor.keySet()) {
-			if(this.rautor.get(a).size()==0) {
-				if(up.isEmpty())
-					up.add(a.getNomeAutor());
-				else {
-					if(up.contains(a.getNomeAutor()))
-						;
-					else {
-						if(hist.contains(a.getNomeAutor()))
-							up.remove(a.getNomeAutor());
-						else
-							up.add(a.getNomeAutor());
-					}
-				}
-			}
-			else {
-				hist.add(a.getNomeAutor());
-			}	
-		}
-	}*/
 	
-
 	public void verificaAutoresPublicaramSozinhos(HashSet<String> hsa) {
 		
 		for(Autor a : this.rautor.keySet()) {
@@ -161,11 +138,12 @@ public class RedeAutor implements Serializable{
 		
 	}
 	
-	public void lindo(HashMap<Autor, ArrayList<Autor>> ppp) { //teste
+	public void autoresporcoautores(HashMap<Autor, ArrayList<Autor>> ppp) {
 		
 		for(Autor a : this.rautor.keySet()) {
 			if(ppp.containsKey(a))
-				ppp.get(a).addAll(this.rautor.get(a));
+				for(Autor co : this.rautor.get(a))
+				ppp.get(a).add(co.clone());
 			else {
 				ArrayList<Autor> aux = new ArrayList<>();
 				aux = this.rautor.get(a);
@@ -221,5 +199,20 @@ public class RedeAutor implements Serializable{
 				
 				aux.put(a.getNomeAutor(), al);
 			}
+	}
+
+	public void juntaCoautoresInferioresX(HashMap<String, HashSet<String>> autporcoaut) {		
+		for(Autor a : this.rautor.keySet()) {
+			if(autporcoaut.containsKey(a.getNomeAutor())) {
+				for(Autor co : this.rautor.get(a))
+					autporcoaut.get(a.getNomeAutor()).add(co.getNomeAutor());
+			}
+			else {
+				HashSet<String> coaut = new HashSet<>();
+				for(Autor co : this.rautor.get(a))
+					coaut.add(co.getNomeAutor());
+				autporcoaut.put(a.getNomeAutor(), coaut);
+			}
+		}
 	}
 }

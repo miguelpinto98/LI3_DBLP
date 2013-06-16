@@ -17,9 +17,7 @@ public class TesteLI3 {
 	public static ArrayList<String> linhas = new ArrayList<String>();
 	public static int anoi = 0, anof = 0;
 	
-	public static void main(String[] args) throws ClassNotFoundException, IOException {
-	    long inicio = System.nanoTime();
-	    
+	public static void main(String[] args) throws ClassNotFoundException, IOException {	    
 	    int x=0;
 	    do {
 	    	x = Welcome();
@@ -30,9 +28,12 @@ public class TesteLI3 {
     				try {
     					str = MenuLeFicheiro();
     					ra.setNomeFicheiro(str);
+    				    long inicio = System.nanoTime();
     				    linhas = Utils.leLinhasScanner(str);
     				    ra.setTotalArtigos(linhas.size());
     				    Utils.trataLinhas(ra,linhas);
+    				    long fim = System.nanoTime();
+    				    out.println("\nTempo de Leitura: " + (fim - inicio)/1.0E09 + " segs.\n");
     				    MenuPrincipal(ra);
     					flag=true;
  				   	} catch(FileNotFoundException e) {
@@ -42,12 +43,12 @@ public class TesteLI3 {
 	    	} else {
 	    		if(x==2) {
 				    boolean flag = true;
-				    ra = new RedeAno();
+				    ra = null;
 	    			do {
 	    				try {
 	    					str = MenuCarregaObjecto();
-	    					ra.setNomeFicheiro(str);
-	    					ra.carregaObj(str);
+	    					ra = RedeAno.carregaObj(str);
+	    					//ra.setNomeFicheiro(str);
 	    				    MenuPrincipal(ra);
 	    					flag=true;
 	 				   	} catch(FileNotFoundException e) {
@@ -63,9 +64,6 @@ public class TesteLI3 {
 	    		}
 	    	}
 	    } while(x>3);
-	    
-	    long fim = System.nanoTime();
-	    out.println("\nTempo: " + (fim - inicio)/1.0E09 + " segs.\n");
 	}
 	
 	public static int Welcome() {
@@ -158,10 +156,10 @@ public class TesteLI3 {
 	private static void MenuConsultasIntervalos(RedeAno ra) throws FileNotFoundException, IOException {
 		System.out.println("#########################################################");
 		System.out.println("#                                                       #");
-		System.out.println("#  * Defina o intervalo de anos destas consultas        #");
-		System.out.println("#  * Ano inicial:                                       #");
+		System.out.println("#  * Defina o intervalo de anos das consultas           #");
+		System.out.print("#  * Ano inicial: ");
 		anoi=s.nextInt();
-		System.out.println("#  * Ano final:                                         #");
+		System.out.print("#  * Ano final: ");
 		anof=s.nextInt();
 		
 		MenuConsultaAnos(ra,anoi,anof);
@@ -187,9 +185,8 @@ public class TesteLI3 {
 		if(x==1) {
 			System.out.println("################# TOP X PUBLICACOES #####################");
 			System.out.println("#                                                       #");
-			System.out.println("#  * Defina X                                           #");
+			System.out.print("#  * Defina X: ");
 			xx = s.nextInt();
-			System.out.println("#########################################################");
 			System.out.println("#                                                       #");			
 			ArrayList<String> tp = ra.topAutoresPorNome(ai, af,xx);
 			for(String s : tp)
@@ -275,7 +272,13 @@ public class TesteLI3 {
 			System.out.print("#  Defina x: ");
 			xx = s.nextInt();
 			System.out.println("#                                                       #");
-			
+			HashMap<String, HashSet<String>> autcoaut = ra.autoresPorCoautoresInferior();
+			for(String s : autcoaut.keySet()) {
+				System.out.println("#  Autor:"+s);
+					if(autcoaut.get(s).size()<xx)			
+						for(String ss : autcoaut.get(s))
+							System.out.println("#        "+ss);
+			}
 			System.out.println("#                                                       #");
 			System.out.println("#########################################################");
 			MenuConsultasEspeciais(ra);  		
@@ -319,7 +322,7 @@ public class TesteLI3 {
 			System.out.println("#        Total de autores: "+ra.getNomesDistintos());
 			System.out.println("#        Artigos de um unico autor: "+ra.getNumeroArtigosUnicoAutor());
 			System.out.println("#        Autores que apenas publicaram a solo: "+ra.unicoAutor());
-			System.out.println("#        Autores que nunca publicaram a solo: "+ra.coisa());
+			System.out.println("#        Autores que nunca publicaram a solo: "+ra.autEscrevemSolo());
 			System.out.println("#                                                       #");
 			System.out.println("#########################################################");
 			MenuConsultaEstatisticas(ra);

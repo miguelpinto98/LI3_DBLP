@@ -8,6 +8,7 @@ import static java.lang.System.out;
 @SuppressWarnings("serial")
 public class Utils implements Serializable{
 	public static HashSet<Autor> nome = new HashSet<>();
+	public static HashSet<String> autPubOne = new HashSet<>();
 	
 	public static ArrayList<String> leLinhasScanner(String fichName) throws FileNotFoundException{
 		ArrayList<String> linhas = new ArrayList<String>();
@@ -33,17 +34,14 @@ public class Utils implements Serializable{
 	public static void trataLinha(RedeAno ra, String linha) {
 		String[] str = linha.split(", ");
 		ArrayList<Autor> ca = new ArrayList<>();
-		int tam = str.length-1, ano = Integer.parseInt(str[tam]);
-		boolean flag=false;
-		
+		int tam = str.length-1, ano = Integer.parseInt(str[tam]);		
 		
 		for(int i=0; i<tam; i++) {
 			Autor a = new Autor(str[i]);
 			
 			if(tam==1) {
 				ra.addNumeroArtigosUnicoAutor();
-				flag=true;
-				a.setEscreveuSolo(flag);
+				autPubOne.add(a.getNomeAutor());
 			}
 			
 			if(!(nome.contains(a)))
@@ -53,11 +51,12 @@ public class Utils implements Serializable{
 				if(i!=j)
 					ca.add(new Autor(str[j]));
 			}
-			ra.insereRedeAno(ano, a, ca, flag);
+			ra.insereRedeAno(ano, a, ca);
 		}
 		ra.addNumeroAutores(tam);
 		ra.addNumeroPublicacoesAno(ano);
-		ra.setNomesDistintos(nome.size());
+		ra.addAutoresDistintos(nome.size());
+		ra.addAutoresQueEscreveramUmaVezSolo(autPubOne.size());
 	}
 	
 	public static int verificaDuplicados(String fichName) {
