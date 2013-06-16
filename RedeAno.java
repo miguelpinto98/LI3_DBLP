@@ -29,7 +29,7 @@ public class RedeAno implements Serializable {
 		this.nndist = 0;
 	}
 	
-	public RedeAno(TreeMap<Integer, RedeAutor> tra, int naut, int nunico) {
+	public RedeAno(TreeMap<Integer, RedeAutor> tra, int naut, int nunico, int talart,int nndist) {
 		this.rano = new TreeMap<>();
 		for(Integer n : tra.keySet()) {
 			RedeAutor aux = tra.get(n);
@@ -38,8 +38,8 @@ public class RedeAno implements Serializable {
 		this.nautores = naut;
 		this.nartunicoaut = nunico;
 		this.nomefile = "";
-		this.totalart = 0;
-		this.nndist = 0;
+		this.totalart = talart;
+		this.nndist = nndist;
 	} 
 	
 	public RedeAno(RedeAno ra) {
@@ -129,12 +129,12 @@ public class RedeAno implements Serializable {
         ObjectInputStream o = new ObjectInputStream(f);
         
         this.rano = (TreeMap<Integer, RedeAutor>) o.readObject();
-        this.nautores = (Integer) o.readInt();
-        this.nartunicoaut = (Integer) o.readInt();
-        this.nomefile = file;
-        this.totalart = (Integer) o.readInt();
-        this.nndist = (Integer) o.readInt();
-
+        this.nautores = (int) o.readInt();
+        this.nartunicoaut = (int) o.readInt();
+        this.nomefile = "publicx.txt";
+        this.totalart = (int) o.readInt();
+        this.nndist = (int) o.readInt();
+        
         o.close();
         f.close();
 	}
@@ -150,7 +150,9 @@ public class RedeAno implements Serializable {
         o.writeInt(this.totalart);
         o.writeInt(this.nndist);
 
+        o.flush();
         o.close();
+        f.flush();
         f.close();
 	}
 	

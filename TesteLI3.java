@@ -1,8 +1,10 @@
 import static java.lang.System.out;
-
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.TreeMap;
@@ -11,68 +13,12 @@ import java.util.TreeSet;
 public class TesteLI3 {
 	public static Scanner s = new Scanner(System.in);
 	public static String str = null;
-	public static String filename = "publicx.txt";
-	public static RedeAno ra = new RedeAno();	
-	public static int[] res = new int[2];
+	public static RedeAno ra = new RedeAno();
+	public static ArrayList<String> linhas = new ArrayList<String>();
+	public static int anoi = 0, anof = 0;
 	
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
-		ArrayList<String> linhas = new ArrayList<String>();
-	      
 	    long inicio = System.nanoTime();
-	    /*linhas = Utils.leLinhasScanner(filename);
-	       	    
-	    Utils.trataLinhas(ra,linhas);
-	    
-	    out.println("1.1 Ficheiro: "+filename);
-	    out.println("1.1 Total Artigos: " + linhas.size());
-	    out.println("1.1 Total Nomes Lidos: " + ra.getNumeroAutores());
-	    out.println("1.1 Total Autores Distintos: " + Utils.xxx);
-	    out.println("1.1 ["+ra.anoInferior()+","+ra.anoSuperior()+"]");
-	    out.println();
-	    out.println("1.2 Total Autores: " + Utils.xxx);
-	    out.println("1.2 Total Artigos Unico Autor: " + ra.getNumeroArtigosUnicoAutor());
-	    out.println("1.2 Total Autores que publicaram a solo: " + ra.unicoAutor());
-	    out.println("1.2 Total Autores que nuca publicaram a solo: "+ ra.coisa());
-	    
-	    int anoi = 1968;
-	    int anof = 2013;
-	    
-	    out.println("\n1.3 ");
-	    TreeMap<Integer, Integer> lpa = ra.listaPublicacoesPorAno();
-	    for(Integer i : lpa.keySet())
-	    	out.println("Ano: "+i+" Publicacoes: "+lpa.get(i));
-	    
-	    //System.out.println(ra.toString());
-	    out.println("\n2.1 Top autores ");
-	    ArrayList<String> tp = ra.topAutoresPorNome(anoi, anof,10);
-		for(String s : tp)
-			System.out.println(s);
-		/*
-	    out.println("\n2.1 Top Co-Autores ");
-	    HashMap<String, Integer> tca = ra.topCoAutores(anoi, anof, 10);
-	    for(String s : tca.keySet())
-	    	System.out.println(tca.get(s)+s);
-	    
-		out.println("\n2.1 CoAutores Comuns aos Autores ");
-		ArrayList<String> teste = new ArrayList<>();
-		teste.add("Kazunori Komatani"); teste.add("Tetsuya Ogata"); teste.add("Hiroshi G. Okuno");
-		TreeSet<String> aux10 = ra.coautoresComunsDestesAutores(teste, anoi, anof);
-		for(String s : aux10)
-			System.out.println(s);
-		
-	    out.println("\n2.1 Autores que publicaram artigos");
-		HashSet<String> hs = ra.AutoresPorTodosAnos(anoi,anof);
-	    for(String s : hs)
-	    	System.out.println(s);
-	    
-	    out.println();
-	    System.out.println("2.2 Linhas Duplicadas: "+Utils.verificaDuplicados(filename));
-	    
-	    //TreeMap<String, Integer> ta = ra.topAutoresPorNome();
-	    
-	     */
-	    long fim = System.nanoTime();
-	    out.println("\nTempo: " + (fim - inicio)/1.0E09 + " segs.\n");
 	    
 	    int x=0;
 	    do {
@@ -118,7 +64,9 @@ public class TesteLI3 {
 	    	}
 	    } while(x>3);
 	    
-	   }
+	    long fim = System.nanoTime();
+	    out.println("\nTempo: " + (fim - inicio)/1.0E09 + " segs.\n");
+	}
 	
 	public static int Welcome() {
 		System.out.println("################## PROJECTO JAVA LI3 ####################");
@@ -178,7 +126,7 @@ public class TesteLI3 {
 			MenuConsultaEstatisticas(ra);
 		}
 		if(x==2) {
-			MenuConsultaAnos(ra);
+			MenuConsultasIntervalos(ra);
 		}
 		if(x==3) {
 			MenuConsultasEspeciais(ra);
@@ -199,7 +147,7 @@ public class TesteLI3 {
 		System.out.println("#################### GRAVAR FICHEIRO ####################");
 		System.out.println("#                                                       #");
 		System.out.println("#  * Insira o nome do ficheiro a ser gravado,           #");
-		System.out.println("#  * \"1\" para ficheiro default (\"publicx.obj\".          #");
+		System.out.println("#  * \"1\" para ficheiro default (\"publicx.obj\").         #");
 		str=null;
 		if((str=s.next()).equals("1"))
 			return "publicx.obj";
@@ -207,16 +155,136 @@ public class TesteLI3 {
 			return str;
 	}
 
-	private static void MenuConsultasEspeciais(RedeAno ra2) {
+	private static void MenuConsultasIntervalos(RedeAno ra) throws FileNotFoundException, IOException {
 		System.out.println("#########################################################");
 		System.out.println("#                                                       #");
-
+		System.out.println("#  * Defina o intervalo de anos destas consultas        #");
+		System.out.println("#  * Ano inicial:                                       #");
+		anoi=s.nextInt();
+		System.out.println("#  * Ano final:                                         #");
+		anof=s.nextInt();
 		
+		MenuConsultaAnos(ra,anoi,anof);
 	}
-
-	private static void MenuConsultaAnos(RedeAno ra2) {
-		// TODO Auto-generated method stub
+	
+	public static void MenuConsultaAnos(RedeAno ra2, int ai, int af) throws FileNotFoundException, IOException {
+		int x=0, xx=0;
+	   	do {
+		System.out.println("################ CONSULTAS POR ANOS #####################");
+		System.out.println("#                                                       #");
+		System.out.println("#        ["+ai+","+af+"]                                    #");
+		System.out.println("#                                                       #");
+		System.out.println("#        1 - TOP X PUBLICACOES                          #");
+		System.out.println("#        2 - TOP X CO-AUTORIAS                          #");
+		System.out.println("#        3 - CO-AUTORES COMUNS A AUTORES                #");
+		System.out.println("#        4 - AUTORES QUE PUBLICARAM ARTIGOS             #");
+		System.out.println("#        5 - VOLTAR ATRAS                               #");
+		System.out.println("#                                                       #");
+		System.out.println("#        Escolha uma opcao:                             #");
+		System.out.println("#########################################################");
+		x = s.nextInt();
 		
+		if(x==1) {
+			System.out.println("################# TOP X PUBLICACOES #####################");
+			System.out.println("#                                                       #");
+			System.out.println("#  * Defina X                                           #");
+			xx = s.nextInt();
+			System.out.println("#########################################################");
+			System.out.println("#                                                       #");			
+			ArrayList<String> tp = ra.topAutoresPorNome(ai, af,xx);
+			for(String s : tp)
+				System.out.println("#        "+s);
+			System.out.println("#                                                       #");
+			System.out.println("#########################################################");
+			MenuConsultaAnos(ra2, ai, af);
+		}
+		if(x==2) {
+			System.out.println("################# TOP X PUBLICACOES #####################");
+			System.out.println("#                                                       #");
+			System.out.print("#  * Defina x: ");
+			xx = s.nextInt();
+			HashMap<String, Integer> tca = ra.topCoAutores(ai, af, xx);
+		    for(String s : tca.keySet())
+		    	System.out.println(tca.get(s)+s);
+			System.out.println("#                                                       #");
+			System.out.println("#########################################################");
+			MenuConsultaAnos(ra2, ai, af);
+		}
+		if(x==3) {
+			ArrayList<String> autins = new ArrayList<>();
+			System.out.println("############# CO-AUTORES COMUNS A AUTORES ###############");
+			System.out.println("#                                                       #");
+			System.out.println("#  * Introduza os autores:                              #");
+			System.out.println("#  * FORMATO: \"Autor1\", \"Autor2\" <ENTER>                #");
+			BufferedReader in = new BufferedReader(new InputStreamReader(System.in));  
+			String str = in.readLine(); 
+                
+			String[] straux = str.split(", ");
+			for(String ss : straux) {
+				autins.add(ss);
+			}
+			System.out.println("#                                                       #");
+			TreeSet<String> comuns = ra.coautoresComunsDestesAutores(autins, ai, af);
+			for(String s : comuns)
+				System.out.println("#        "+s);
+			System.out.println("#                                                       #");
+			System.out.println("#########################################################");
+			MenuConsultaAnos(ra2, ai, af);
+		}
+		if(x==4) {
+			System.out.println("## AUTORES QUE PUBLICARAM SEMPRE ARTIGOS NO INTERVALO ###");
+			System.out.println("#                     ["+ai+","+af+"]                       #");
+			System.out.println("#                                                       #");			
+			HashSet<String> hs = ra.AutoresPorTodosAnos(ai,af);
+		    for(String s : hs)
+		    	System.out.println("#        "+s);
+			System.out.println("#                                                       #");
+			System.out.println("#########################################################");
+			MenuConsultaAnos(ra2, ai, af);
+		}
+		if(x==5)
+			MenuPrincipal(ra);
+		else
+			System.out.println("Opcao Invalida!");	
+	   	}while(x>5);
+	}
+	
+	private static void MenuConsultasEspeciais(RedeAno ra) throws FileNotFoundException, IOException {
+		int x=0, xx=0;
+	   	do {
+		System.out.println("################ CONSULTAS ESPECIAIS ####################");
+		System.out.println("#                                                       #");
+		System.out.println("#        1 - NUMEROS DE LINHAS EM DUPLICADO             #");
+		System.out.println("#        2 - AUTORES POR CO-AUTORES INFERIORES A X      #");
+		System.out.println("#        3 - VOLTAR ATRAS                               #");
+		System.out.println("#                                                       #");
+		System.out.println("#        Escolha uma opcao:                             #");
+		System.out.println("#########################################################");
+		x = s.nextInt();
+	   	if(x==1){
+			System.out.println("########### NUMEROS DE LINHAS EM DUPLICADO ##############");
+			System.out.println("#                                                       #");
+			System.out.println("#        Linhas em duplicado: "+Utils.verificaDuplicados(ra.getNomeFicheiro()));
+			System.out.println("#                                                       #");
+			System.out.println("#########################################################");
+			MenuConsultasEspeciais(ra);  		
+	   	}
+	   	if(x==2) {
+			System.out.println("######## AUTORES POR CO-AUTORES INFERIORES A X ##########");
+			System.out.println("#                                                       #");
+			System.out.print("#  Defina x: ");
+			xx = s.nextInt();
+			System.out.println("#                                                       #");
+			
+			System.out.println("#                                                       #");
+			System.out.println("#########################################################");
+			MenuConsultasEspeciais(ra);  		
+	   	}
+		if(x==3)
+			MenuPrincipal(ra);
+		else
+			System.out.println("Opcao Invalida!");	
+	   	} while(x>3);
 	}
 
 	private static void MenuConsultaEstatisticas(RedeAno ra) throws FileNotFoundException, IOException {
@@ -227,7 +295,7 @@ public class TesteLI3 {
 		System.out.println("#        1 - DADOS ULTIMO FICHEIRO LIDO                 #");
 		System.out.println("#        2 - DADOS GERAIS ACTUAIS NA ESTRUTURA          #");
 		System.out.println("#        3 - TABELA PUBLICACOES POR ANO                 #");
-		System.out.println("#        4 - VOLTAR AO MENU PRINCIPAL                   #");
+		System.out.println("#        4 - VOLTAR ATRAS                               #");
 		System.out.println("#                                                       #");
 		System.out.println("#        Escolha uma opcao:                             #");
 		System.out.println("#########################################################");

@@ -188,6 +188,7 @@ public class RedeAutor implements Serializable{
 	}
 
 	public void JuntaCoAutores(HashMap<String, Integer> aux) {
+		@SuppressWarnings("unused")
 		String coaut = null, coaut2 = null;
 		int res = 0;
 		
