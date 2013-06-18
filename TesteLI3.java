@@ -84,7 +84,7 @@ public class TesteLI3 {
 		System.out.println("#                                                       #");
 		System.out.println("#  * Insira \"1\" caso prentenda carregar o ficheiro      #");
 		System.out.println("#  * default (\"publicx.obj\"), caso contrário            #");
-		System.out.println("#  * insira o nome do ficheiro a ser carregado .obj       #");
+		System.out.println("#  * insira o nome do ficheiro a ser carregado .obj      #");
 		str=null;
 		if((str=s.next()).equals("1"))
 			return "publicx.obj";
@@ -95,7 +95,7 @@ public class TesteLI3 {
 	public static String MenuLeFicheiro() {
 		System.out.println("################### LER FICHEIRO TEXTO ##################");
 		System.out.println("#                                                       #");
-		System.out.println("#  * Insira \"1\" caso prentenda ler o ficheiro         #");
+		System.out.println("#  * Insira \"1\" caso prentenda ler o ficheiro           #");
 		System.out.println("#  * default (\"publicx.txt\"), caso contrário insira     #");
 		System.out.println("#  * nome de outro ficheiro para ser lido .txt          #");
 		str=null;
