@@ -1,0 +1,7 @@
+SRC = writeFile.c readConference.c readJournal.c main.c
+CCFLAGS = -O0 -Wall -Wextra
+CCC = gcc
+FILE = PARSER_LI3
+
+$(FILE): $(SRC:.c=.o)
+	$(CCC) -o $(FILE) $(CCFLAGS) $(SRC)

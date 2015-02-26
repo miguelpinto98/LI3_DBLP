@@ -1,0 +1,4 @@
+Lista Rejeitadas
+----------------
+j-Elsv-CMIG.txt 155
+j-Elsv-DSS.txt 146

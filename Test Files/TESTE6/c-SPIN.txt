@@ -1,0 +1,296 @@
+296 Alastair F. Donaldson, David Parker: Model Checking Software - 19th International Workshop, SPIN 2012, Oxford, UK, July 23-24, 2012. Proceedings SPIN 2012
+295 Thomas Ball, Nikolaj Bjørner, Leonardo Mendonça de Moura, Kenneth L. McMillan, Margus Veanes: Beyond First-Order Satisfaction: Fixed Points, Interpolants, Automata and Polynomials. SPIN 2012:1-6
+294 Paul Dan Marinescu, Cristian Cadar: High-Coverage Symbolic Patch Testing. SPIN 2012:7-21
+293 Andrey Rybalchenko: Towards Automatic Synthesis of Software Verification Tools. SPIN 2012:22
+292 Andreas Zeller: Mining Models. SPIN 2012:23
+291 Stefan Leue, Mitra Tabaei Befrouei: Counterexample Explanation by Anomaly Detection. SPIN 2012:24-42
+290 Sami Evangelista, Lars Michael Kristensen: Combining the Sweep-Line Method with the Use of an External-Memory Priority Queue. SPIN 2012:43-61
+289 Hao Zheng, Emmanuel Rodriguez, Yingying Zhang, Chris J. Myers: A Compositional Minimization Approach for Large Asynchronous Design Verification. SPIN 2012:62-79
+288 Alexander Ditter, Milan Ceska, Gerald Lüttgen: On Parallel Software Verification Using Boolean Equation Systems. SPIN 2012:80-97
+287 Anton Wijs, Dragan Bosnacki: Improving GPU Sparse Matrix-Vector Multiplication for Probabilistic Model Checking. SPIN 2012:98-116
+286 Theo C. Ruys, Pim Kars: Gossiping Girls Are All Alike. SPIN 2012:117-136
+285 Shravan Garlapati, Sandeep K. Shukla: Formal Verification of Hierarchically Distributed Agent Based Protection Scheme in Smart Grid. SPIN 2012:137-154
+284 Gerard J. Holzmann: Parallelizing the Spin Model Checker. SPIN 2012:155-171
+283 Ethan Burns, Rong Zhou: Parallel Model Checking Using Abstraction. SPIN 2012:172-190
+282 Reng Zeng, Zhuo Sun, Su Liu, Xudong He: McPatom: A Predictive Analysis Tool for Atomicity Violation Using Model Checking. SPIN 2012:191-207
+281 Divjyot Sethi, Muralidhar Talupur, Daniel Schwartz-Narbonne, Sharad Malik: Parameterized Model Checking of Fine Grained Concurrency. SPIN 2012:208-226
+280 Jonathan Bogdoll, Alexandre David, Arnd Hartmanns, Holger Hermanns: mctau: Bridging the Gap between Modest and UPPAAL. SPIN 2012:227-233
+279 Heinz Riener, Görschwin Fey: FAuST: A Framework for Formal Verification, Automated Debugging, and Software Test Generation. SPIN 2012:234-240
+278 Martin Sulzmann, Axel Zechner: Model Checking DSL-Generated C Source Code. SPIN 2012:241-247
+277 Jürgen Christ, Jochen Hoenicke, Alexander Nutz: SMTInterpol: An Interpolating SMT Solver. SPIN 2012:248-254
+276 Yong Jiang, Zongyan Qiu: S2N: Model Transformation from SPIN to NuSMV - (Tool Paper). SPIN 2012:255-260
+275 Alex Groce, Madanlal Musuvathi: Model Checking Software - 18th International SPIN Workshop, Snowbird, UT, USA, July 14-15, 2011. Proceedings SPIN 2011
+274 Jasmin Fisher: Model Checking Cell Fate Decisions. SPIN 2011:1
+273 Radu Mateescu, Anton Wijs: Property-Dependent Reductions for the Modal Mu-Calculus. SPIN 2011:2-19
+272 Fang Yu, Tevfik Bultan, Ben Hardekopf: String Abstractions for String Verification. SPIN 2011:20-37
+271 Alfons Laarman, Jaco van de Pol, Michael Weber: Parallel Recursive State Compression for Free. SPIN 2011:38-56
+270 Abhishek Udupa, Ankush Desai, Sriram K. Rajamani: Depth Bounded Explicit-State Model Checking. SPIN 2011:57-74
+269 Pavel Parizek, Ondrej Lhoták: Randomized Backtracking in State Space Traversal. SPIN 2011:75-89
+268 Daniele Campana, Alessandro Cimatti, Iman Narasamdya, Marco Roveri: An Analytic Evaluation of SystemC Encodings in Promela. SPIN 2011:90-107
+267 Yogesh Mali, Eric Van Wyk: Building Extensible Specifications and Implementations of Promela with AbleP. SPIN 2011:108-125
+266 Andreas Morgenstern, Klaus Schneider: Program Sketching via CTL* Model Checking. SPIN 2011:126-143
+265 Alexander Linden, Pierre Wolper: A Verification-Based Approach to Memory Fence Insertion in Relaxed Memory Systems. SPIN 2011:144-160
+264 Markus Weißmann, Stefan Bedenk, Christian Buckl, Alois Knoll: Model Checking Industrial Robot Systems. SPIN 2011:161-176
+263 Bob de Vos, Lennart C. L. Kats, Cornelis Pronk: EpiSpin: An Eclipse Plug-In for Promela/Spin Using Spoofax. SPIN 2011:177-182
+262 Husain Aljazzar, Florian Leitner-Fischer, Stefan Leue, Dimitar Simeonov: DiPro - A Tool for Probabilistic Counterexample Generation. SPIN 2011:183-187
+261 Jirí Simsa, Randy Bryant, Garth A. Gibson: dBug: Systematic Testing of Unmodified Distributed and Multi-threaded Systems. SPIN 2011:188-193
+260 Jaco van de Pol, Michael Weber: Model Checking Software - 17th International SPIN Workshop, Enschede, The Netherlands, September 27-29, 2010. Proceedings SPIN 2010
+259 Alessandro Cimatti: SMT-Based Software Model Checking. SPIN 2010:1-3
+258 Jan Tobias Mühlberg, Gerald Lüttgen: Symbolic Object Code Analysis. SPIN 2010:4-21
+257 Kari Kähkönen, Roland Kindermann, Keijo Heljanko, Ilkka Niemelä: Experimental Comparison of Concolic and Random Testing for Java Card Applets. SPIN 2010:22-39
+256 Pedro Merino, Alberto Salmeron: Combining SPIN with ns-2 for Protocol Optimization. SPIN 2010:40-57
+255 Kenro Yatake, Toshiaki Aoki: Automatic Generation of Model Checking Scripts Based on Environment Modeling. SPIN 2010:58-75
+254 Darren D. Cofer: Model Checking: Cleared for Take Off. SPIN 2010:76-87
+253 Martin Wehrle, Sebastian Kupferschmid: Context-Enhanced Directed Model Checking. SPIN 2010:88-105
+252 Stefan Edelkamp, Damian Sulewski: Efficient Explicit-State Model Checking on General Purpose Graphics Processors. SPIN 2010:106-123
+251 Marc de Jonge, Theo C. Ruys: The SpinJa Model Checker. SPIN 2010:124-128
+250 Rüdiger Ehlers, Bernd Finkbeiner: On the Virtue of Patience: Minimizing Büchi Automata. SPIN 2010:129-145
+249 Maja Pesic, Dragan Bosnacki, Wil M. P. van der Aalst: Enacting Declarative Languages Using LTL: Avoiding Errors and Improving Performance. SPIN 2010:146-161
+248 Zhe Chen, Gilles Motet: Nevertrace Claims for Model Checking. SPIN 2010:162-179
+247 Javier Esparza: A False History of True Concurrency: From Petri to Tools. SPIN 2010:180-186
+246 Matthew Hague, C.-H. Luke Ong: Analysing Mu-Calculus Properties of Pushdown Systems. SPIN 2010:187-192
+245 Georgel Calin, Pepijn Crouzen, Pedro R. D'Argenio, Ernst Moritz Hahn, Lijun Zhang: Time-Bounded Reachability in Distributed Input/Output Interactive Probabilistic Chains. SPIN 2010:193-211
+244 Alexander Linden, Pierre Wolper: An Automata-Based Symbolic Approach for Verifying Programs on Relaxed Memory Models. SPIN 2010:212-226
+243 Naghmeh Ghafari, Alan J. Hu, Zvonimir Rakamaric: Context-Bounded Translations for Concurrent Software: An Empirical Evaluation. SPIN 2010:227-244
+242 Nicholas Kidd, Suresh Jagannathan, Jan Vitek: One Stack to Run Them All - Reducing Concurrent Analysis to Sequential Analysis under Priority Scheduling. SPIN 2010:245-261
+241 Corina S. Pasareanu: Model Checking Software, 16th International SPIN Workshop, Grenoble, France, June 26-28, 2009. Proceedings SPIN 2009
+240 Patrice Godefroid: Software Model Checking Improving Security of a Billion Computers. SPIN 2009:1
+239 Marta Z. Kwiatkowska: On Quantitative Software Verification. SPIN 2009:2-3
+238 Joseph Sifakis: The Quest for Correctness-Beyond a Posteriori Verification. SPIN 2009:4
+237 Willem Visser: Who Really Cares If the Program Crashes?. SPIN 2009:5
+236 Mordechai Ben-Ari: Tool Presentation: Teaching Concurrency and Model Checking. SPIN 2009:6-11
+235 Peter C. Dillinger, Panagiotis Manolios: Fast, All-Purpose State Storage. SPIN 2009:12-31
+234 Dragan Bosnacki, Stefan Edelkamp, Damian Sulewski: Efficient Probabilistic Model Checking on General Purpose Graphics Processors. SPIN 2009:32-49
+233 David Faragó, Peter H. Schmitt: Improving Non-Progress Cycle Checks. SPIN 2009:50-67
+232 Malay K. Ganai, Sudipta Kundu: Reduction of Verification Conditions for Concurrent System Using Mutually Atomic Transactions. SPIN 2009:68-87
+231 Ernst Moritz Hahn, Holger Hermanns, Lijun Zhang: Probabilistic Reachability for Parametric Markov Models. SPIN 2009:88-106
+230 Alexander Heußner, Tristan Le Gall, Grégoire Sutre: Extrapolation-Based Path Invariants for Abstraction Refinement of Fifo Systems. SPIN 2009:107-124
+229 Nicholas Kidd, Peter Lammich, Tayssir Touili, Thomas W. Reps: A Decision Procedure for Detecting Atomicity Violations for Communicating Processes with Locks. SPIN 2009:125-142
+228 Tim Kovse, Bostjan Vlaovic, Aleksander Vreze, Zmago Brezocnik: Eclipse Plug-In for Spin and st2msc Tools-Tool Presentation. SPIN 2009:143-147
+227 Junghee Lim, Akash Lal, Thomas W. Reps: Symbolic Analysis via Semantic Reinterpretation. SPIN 2009:148-168
+226 Radek Pelánek, Václav Rosecký: EMMA: Explicit Model Checking Manager (Tool Presentation). SPIN 2009:169-173
+225 Neha Rungta, Eric G. Mercer, Willem Visser: Efficient Testing of Concurrent Programs with Abstraction-Guided Symbolic Execution. SPIN 2009:174-191
+224 Andrey Rybalchenko, Rishabh Singh: Subsumer-First: Steering Symbolic Reachability Analysis. SPIN 2009:192-204
+223 Sebastian Schmerl, Michael Vogel, Hartmut König: Identifying Modeling Errors in Signatures by Model Checking. SPIN 2009:205-222
+222 Oliver Sharma, Jonathan Lewis, Alice Miller, Alan Dearle, Dharini Balasubramaniam, Ronald Morrison, Joe Sventek: Towards Verifying Correctness of Wireless Sensor Network Applications Using Insense and Spin. SPIN 2009:223-240
+221 Hubert Garavel, Damien Thivolle: Verification of GALS Systems by Combining Synchronous Languages and Process Calculi. SPIN 2009:241-260
+220 Martin T. Vechev, Eran Yahav, Greta Yorsh: Experience with Model Checking Linearizability. SPIN 2009:261-278
+219 Yu Yang, Xiaofang Chen, Ganesh Gopalakrishnan, Chao Wang: Automatic Discovery of Transition Symmetry in Multithreaded Programs Using Dynamic Analysis. SPIN 2009:279-295
+218 Klaus Havelund, Rupak Majumdar, Jens Palsberg: Model Checking Software, 15th International SPIN Workshop, Los Angeles, CA, USA, August 10-12, 2008, Proceedings SPIN 2008
+217 Matthew B. Dwyer, Rahul Purandare: Residual Checking of Safety Properties. SPIN 2008:1-2
+216 Shaz Qadeer: The Case for Context-Bounded Verification of Concurrent Programs. SPIN 2008:3-6
+215 Yannis Smaragdakis: Combining Static and Dynamic Reasoning for the Discovery of Program Properties. SPIN 2008:7-8
+214 Dries Vanoverberghe, Nikolaj Bjørner, Jonathan de Halleux, Wolfram Schulte, Nikolai Tillmann: Using Dynamic Symbolic Execution to Improve Deductive Verification. SPIN 2008:9-25
+213 Todd R. Andel, Alec Yasinsac: Automated Evaluation of Secure Route Discovery in MANET Protocols. SPIN 2008:26-41
+212 Tonglaga Bao, Michael Jones: Model Checking Abstract Components within Concrete Software Environments. SPIN 2008:42-59
+211 Frank Ciesinski, Christel Baier, Marcus Größer, David Parker: Generating Compact MTBDD-Representations from ProbmelaSpecifications. SPIN 2008:60-76
+210 Sami Evangelista: Dynamic Delayed Duplicate Detection for External Memory Model Checking. SPIN 2008:77-94
+209 Harald Fecher, Sharon Shoham: State Focusing: Lazy Abstraction for the Mu-Calculus. SPIN 2008:95-113
+208 Malay K. Ganai, Aarti Gupta: Efficient Modeling of Concurrent Systems in BMC. SPIN 2008:114-133
+207 Gerard J. Holzmann, Rajeev Joshi, Alex Groce: Tackling Large Verification Problems with the Swarm Tool. SPIN 2008:134-143
+206 Moonzoo Kim, Yunja Choi, Yunho Kim, Hotae Kim: Formal Verification of a Flash Memory Device Driver - An Experience Report. SPIN 2008:144-159
+205 Peter Lamborn, Eric A. Hansen: Layered Duplicate Detection in External-Memory Model Checking. SPIN 2008:160-175
+204 Stefan Leue, Alin Stefanescu, Wei Wei: Dependency Analysis for Control Flow Cycles in Reactive Communicating Processes. SPIN 2008:176-195
+203 Radu Mateescu, Emilie Oudot: Improved On-the-Fly Equivalence Checking Using Boolean Equation Systems. SPIN 2008:196-213
+202 Nazha Abed, Stavros Tripakis, Jean-Marc Vincent: Resource-Aware Verification Using Randomized Exploration of Large State Spaces. SPIN 2008:214-231
+201 Viet Yen Nguyen, Theo C. Ruys: Incremental Hashing for Spin. SPIN 2008:232-249
+200 Gaurav Singh, Sandeep K. Shukla: Verifying Compiler Based Refinement of BluespecTM. SPIN 2008:250-269
+199 Dejvuth Suwimonteerabuth, Javier Esparza, Stefan Schwoon: Symbolic Context-Bounded Analysis of Multithreaded Java Programs. SPIN 2008:270-287
+198 Yu Yang, Xiaofang Chen, Ganesh Gopalakrishnan, Robert M. Kirby: Efficient Stateful Dynamic Partial Order Reduction. SPIN 2008:288-305
+197 Fang Yu, Tevfik Bultan, Marco Cova, Oscar H. Ibarra: Symbolic String Verification: An Automata-Based Approach. SPIN 2008:306-324
+196 Anna Zaks, Rajeev Joshi: Verifying Multi-threaded C Programs with SPIN. SPIN 2008:325-342
+195 Dragan Bosnacki, Stefan Edelkamp: Model Checking Software, 14th International SPIN Workshop, Berlin, Germany, July 1-3, 2007, Proceedings SPIN 2007
+194 Dennis Dams: StackSnuffer: Curing Orion's Unsoundness. SPIN 2007:1
+193 Lubos Brim, Jiri Barnat: Tutorial: Parallel Model Checking. SPIN 2007:2-3
+192 Harald Fecher, Sharon Shoham: Local Abstraction-Refinement for the mu-Calculus. SPIN 2007:4-23
+191 Paul Gastin, Pierre Moro: Minimal Counterexample Generation for SPIN. SPIN 2007:24-38
+190 Neha Rungta, Eric G. Mercer: Generating Counter-Examples Through Randomized Guided Search. SPIN 2007:39-57
+189 Yu Yang, Xiaofang Chen, Ganesh Gopalakrishnan, Robert M. Kirby: Distributed Dynamic Partial Order Reduction Based Verification of Threaded Software. SPIN 2007:58-75
+188 Sami Evangelista, Christophe Pajault: Some Solutions to the Ignoring Problem. SPIN 2007:76-94
+187 Guy Gueta, Cormac Flanagan, Eran Yahav, Mooly Sagiv: Cartesian Partial-Order Reduction. SPIN 2007:95-112
+186 Joel P. Self, Eric G. Mercer: On-the-Fly Dynamic Dead Variable Analysis. SPIN 2007:113-130
+185 Gérard Basler, Daniel Kroening, Georg Weissenbacher: SAT-Based Summarization for Boolean Programs. SPIN 2007:131-148
+184 Kristin Y. Rozier, Moshe Y. Vardi: LTL Satisfiability Checking. SPIN 2007:149-167
+183 Michael Weber: An Embeddable Virtual Machine for State Space Generation. SPIN 2007:168-186
+182 Jiri Barnat, Lubos Brim, Petr Rockai: Scalable Multi-core LTL Model-Checking. SPIN 2007:187-203
+181 Claus Traulsen, Jérôme Cornet, Matthieu Moy, Florence Maraninchi: A SystemC/TLM Semantics in Promelaand Its Possible Applications. SPIN 2007:204-222
+180 Alberto Lluch-Lafuente: Towards Model Checking Spatial Properties with SPIN. SPIN 2007:223-242
+179 Pedro de la Cámara, María-del-Mar Gallardo, Pedro Merino: Model Extraction for ARINC 653 Based Avionics Software. SPIN 2007:243-262
+178 Radek Pelánek: BEEM: Benchmarks for Explicit Model Checkers. SPIN 2007:263-267
+177 María-del-Mar Gallardo, Christophe Joubert, Pedro Merino, David Sanán: COPEN and ANNOTATOR: Tools for On-the-Fly Model Checking C Programs. SPIN 2007:268-273
+176 Mohamed Nassim Seghir, Andreas Podelski: ACSAR: Software Model Checking with Transfinite Refinement. SPIN 2007:274-278
+175 Swarat Chaudhuri, Rajeev Alur: Instrumenting C Programs with Nested Word Monitors. SPIN 2007:279-283
+174 Antti Valmari: Model Checking Software, 13th International SPIN Workshop, Vienna, Austria, March 30 - April 1, 2006, Proceedings SPIN 2006
+173 Stefan Edelkamp, Shahid Jabbar: Large-Scale Directed Model Checking LTL. SPIN 2006:1-18
+172 Klaus Dräger, Bernd Finkbeiner, Andreas Podelski: Directed Model Checking with Distance-Preserving Abstractions. SPIN 2006:19-34
+171 Sebastian Kupferschmid, Jörg Hoffmann, Henning Dierks, Gerd Behrmann: Adapting an AI Planning Heuristic for Directed Model Checking. SPIN 2006:35-52
+170 Jaco Geldenhuys, Henri Hansen: Larger Automata and Less Work for LTL Model Checking. SPIN 2006:53-70
+169 Harald Fecher, Martin Leucker, Verena Wolf: Don't Know in Probabilistic Systems. SPIN 2006:71-88
+168 Matthias Kuntz, Markus Siegle: Symbolic Model Checking of Stochastic Systems: Theory and Implementation. SPIN 2006:89-107
+167 Igor Melatti, Robert Palmer, Geoffrey Sawaya, Yu Yang, Robert M. Kirby, Ganesh Gopalakrishnan: Parallel and Distributed Model Checking in Eddy. SPIN 2006:108-125
+166 Christophe Joubert, Radu Mateescu: Distributed On-the-Fly Model Checking and Test Case Generation. SPIN 2006:126-145
+165 Alessandro Armando, Jacopo Mantovani, Lorenzo Platania: Bounded Model Checking of Software Using SMT Solvers Instead of SAT Solvers. SPIN 2006:146-162
+164 Saswat Anand, Corina S. Pasareanu, Willem Visser: Symbolic Execution with Abstract Subsumption Checking. SPIN 2006:163-181
+163 Pedro de la Cámara, María-del-Mar Gallardo, Pedro Merino: Abstract Matching for Software Model Checking. SPIN 2006:182-200
+162 Guy Edward Gallasch, Jonathan Billington: A Parametric State Space for the Analysis of the Infinite Class of Stop-and-Wait Protocols. SPIN 2006:201-218
+161 Simon Bäumler, Michael Balser, Andriy Dunets, Wolfgang Reif, Jonathan Schmitt: Verification of Medical Guidelines by Model Checking - A Case Study. SPIN 2006:219-233
+160 Corina S. Pasareanu, Dimitra Giannakopoulou: Towards a Compositional SPIN. SPIN 2006:234-251
+159 Ritwik Bhattacharya, Steven M. German, Ganesh Gopalakrishnan: Exploiting Symmetry and Transactions for Partial Order Reduction of Rule Based Specifications. SPIN 2006:252-270
+158 Dragan Bosnacki, Stefan Leue, Alberto Lluch-Lafuente: Partial-Order Reduction for General State Exploring Algorithms. SPIN 2006:271-287
+157 Aleksandar Dimovski, Dan R. Ghica, Ranko Lazic: A Counterexample-Guided Refinement Tool for Open Procedural Programs. SPIN 2006:288-292
+156 Christian Topnik, Eva Wilhelm, Tiziana Margaria, Bernhard Steffen: jMosel: A Stand-Alone Tool and jABC Plugin for M2L(Str). SPIN 2006:293-298
+155 Harmen Kastenberg, Arend Rensink: Model Checking Dynamic States in GROOVE. SPIN 2006:299-305
+154 Patrice Godefroid: Model Checking Software, 12th International SPIN Workshop, San Francisco, CA, USA, August 22-24, 2005, Proceedings SPIN 2005
+153 David Wagner: Pushdown Model Checking for Security. SPIN 2005:1
+152 Cristian Cadar, Dawson R. Engler: Execution Generated Test Cases: How to Make Systems Code Crash Itself. SPIN 2005:2-23
+151 Gerard J. Holzmann, Theo C. Ruys: Effective Bug Hunting with Spin and Modex. SPIN 2005:24-24
+150 Thomas A. Henzinger, Ranjit Jhala, Rupak Majumdar: The BLAST Software Verification System. SPIN 2005:25-26
+149 Willem Visser, Peter C. Mehlitz: Model Checking Programs with Java PathFinder. SPIN 2005:27
+148 Madanlal Musuvathi, David L. Dill: An Incremental Heap Canonicalization Algorithm. SPIN 2005:28-42
+147 Sami Evangelista, Jean-François Pradat-Peyre: Memory Efficient State Space Storage in Explicit Software Model Checking. SPIN 2005:43-57
+146 Stefan Leue, Wei Wei: Counterexample-Based Refinement for a Boundedness Test for CFSM Languages. SPIN 2005:58-74
+145 Byron Cook, Daniel Kroening, Natasha Sharygina: Symbolic Model Checking for Asynchronous Boolean Programs. SPIN 2005:75-90
+144 Dragan Bosnacki, Gerard J. Holzmann: Improving Spin's Partial-Order Reduction for Breadth-First Search. SPIN 2005:91-105
+143 Vladimir Levin, Robert Palmer, Shaz Qadeer, Sriram K. Rajamani: Sound Transaction-Based Reduction Without Cycle Detection. SPIN 2005:106-122
+142 Sarfraz Khurshid, Iván García, Yuk Lai Suen: Repairing Structurally Complex Data. SPIN 2005:123-138
+141 Yung-Pin Cheng: Crafting a Promela Front-End with Abstract Data Types to Mitigate the Sensitivity of (Compositional) Analysis to Implementation Choices. SPIN 2005:139-153
+140 Tomás Barros, Ludovic Henrio, Eric Madelaine: Behavioural Models for Hierarchical Components. SPIN 2005:154-168
+139 Jean-Michel Couvreur, Alexandre Duret-Lutz, Denis Poitrenaud: On-the-Fly Emptiness Checks for Generalized Büchi Automata. SPIN 2005:169-184
+138 Bas Luttik, Nikola Trcka: Stuttering Congruence for chi. SPIN 2005:185-199
+137 Salamah Salamah, Ann Q. Gates, Steve Roach, Oscar Mondragon: Verifying Pattern-Generated LTL Formulas: A Case Study. SPIN 2005:200-220
+136 Abdul Sahid Khan, Madhavan Mukund, S. P. Suresh: Generic Verification of Security Protocols. SPIN 2005:221-235
+135 Gerrit Rothmaier, Tobias Kneiphoff, Heiko Krumm: Using SPIN and Eclipse for Optimized High-Level Modeling and Analysis of Computer Network Attack Models. SPIN 2005:236-250
+134 Eric Mercer, Michael Jones: Model Checking Machine Code with the GNU Debugger. SPIN 2005:251-265
+133 Alastair F. Donaldson, Simon J. Gay: Etch: An Enhanced Type Checking Tool for Promela. SPIN 2005:266-271
+132 Peter C. Dillinger, Panagiotis Manolios: Enhanced Probabilistic Verification with 3Spin and 3Murphi. SPIN 2005:272-276
+131 Anil Madhavapeddy, David Scott, Richard Sharp: SPLAT: A Tool for Model-Checking and Dynamically-Enforcing Abstractions. SPIN 2005:277-281
+130 Dimitra Giannakopoulou, Corina S. Pasareanu: Learning-Based Assume-Guarantee Verification (Tool Paper). SPIN 2005:282-287
+129 Susanne Graf, Laurent Mounier: Model Checking Software, 11th International SPIN Workshop, Barcelona, Spain, April 1-3, 2004, Proceedings SPIN 2004
+128 Reinhard Wilhelm: Formal Analysis of Processor Timing Models. SPIN 2004:1-4
+127 Radek Pelánek: Typical Structural Properties of State Spaces. SPIN 2004:5-22
+126 Jaco Geldenhuys: State Caching Reconsidered. SPIN 2004:23-38
+125 Peter Leven, Tilman Mehler, Stefan Edelkamp: Directed Error Detection in C++ with the Assembly-Level Model Checker StEAM. SPIN 2004:39-56
+124 Peter C. Dillinger, Panagiotis Manolios: Fast and Accurate Bitstate Verification for SPIN. SPIN 2004:57-75
+123 Gerard J. Holzmann, Rajeev Joshi: Model-Driven Software Verification. SPIN 2004:76-91
+122 Paul Gastin, Pierre Moro, Marc Zeitoun: Minimization of Counterexamples in SPIN. SPIN 2004:92-108
+121 Moez Krichen, Stavros Tripakis: Black-Box Conformance Testing for Real-Time Systems. SPIN 2004:109-126
+120 Iulian Ober, Susanne Graf, Ileana Ober: Validation of UML Models via a Mapping to Communicating Extended Timed Automata. SPIN 2004:127-145
+119 Michael Jones, Eric Mercer: Explicit State Model Checking with Hopper. SPIN 2004:146-150
+118 Hubert Garavel, Radu Mateescu: SEQOPEN: A Tool for Efficient Trace-Based Verification. SPIN 2004:151-157
+117 Grégory Batt, Damien Bergamini, Hidde de Jong, Hubert Garavel, Radu Mateescu: Model Checking Genetic Regulatory Networks Using GNA and CADP. SPIN 2004:158-163
+116 Corina S. Pasareanu, Willem Visser: Verification of Java Programs Using Symbolic Execution and Invariant Generation. SPIN 2004:164-181
+115 Alain Finkel, Jérôme Leroux: Polynomial Time Image Computation with Interval-Definable Counters Systems. SPIN 2004:182-197
+114 Dragan Bosnacki, Natalia Ioustinova, Natalia Sidorova: Using Fairness to Make Abstractions Work. SPIN 2004:198-215
+113 Stefan Leue, Richard Mayr, Wei Wei: A Scalable Incomplete Test for Message Buffer Overflow in Promela Models. SPIN 2004:216-233
+112 Jessica Chen, Hanmei Cui: Translation from Adapted UML to Promela for CORBA-Based Applications. SPIN 2004:234-251
+111 Cormac Flanagan: Verifying Commit-Atomicity Using Model-Checking. SPIN 2004:252-266
+110 Murali Rangarajan, Samar Dajani-Brown, Kirk Schloegel, Darren D. Cofer: Analysis of Distributed Spin Applied to Industrial-Scale Models. SPIN 2004:267-285
+109 Stephen F. Siegel, George S. Avrunin: Verification of MPI-Based Software for Scientific Computation. SPIN 2004:286-303
+108 Theo C. Ruys, Gerard J. Holzmann: Advanced SPIN Tutorial. SPIN 2004:304-305
+107 Marius Bozga, Susanne Graf, Laurent Mounier, Iulian Ober: IF Validation Environment Tutorial. SPIN 2004:306-307
+106 Thomas Ball, Sriram K. Rajamani: Model Checking Software, 10th International SPIN Workshop. Portland, OR, USA, May 9-10, 2003, Proceedings SPIN 2003
+105 Theo C. Ruys: Optimal Scheduling Using Branch and Bound with SPIN 4. SPIN 2003:1-17
+104 Sascha Konrad, Laura A. Campbell, Betty H. C. Cheng, Min Deng: A Requirements Patterns-Driven Approach to Specify Systems and Check Properties. SPIN 2003:18-33
+103 Samar Dajani-Brown, Darren D. Cofer, Gary Hartmann, Steve Pratt: Formal Modeling and Analysis of an Avionics Triplex Sensor Voter. SPIN 2003:34-48
+102 Ivana Cerná, Radek Pelánek: Distributed Explicit Fair Cycle Detection (Set Based Approach). SPIN 2003:49-73
+101 Timo Latvala: Efficient Model Checking of Safety Properties. SPIN 2003:74-88
+100 Dragan Bosnacki: A Light-Weight Algorithm for Model Checking with Symmetry Reduction and Weak Fairness. SPIN 2003:89-103
+99 K. Rustan M. Leino: A SAT Characterization of Boolean-Program Correctness. SPIN 2003:104-120
+98 Alex Groce, Willem Visser: What Went Wrong: Explaining Counterexamples. SPIN 2003:121-135
+97 Jaco Geldenhuys, Antti Valmari: A Nearly Memory-Optimal Data Structure for Sets and Mappings. SPIN 2003:136-150
+96 Deepak D'Souza, Madhavan Mukund: Checking Consistency of SDL+MSC Specifications. SPIN 2003:151-165
+95 David Garlan, Serge Khersonsky, Jung Soo Kim: Model Checking Publish-Subscribe Systems. SPIN 2003:166-180
+94 Irfan Zakiuddin, Michael Goldsmith, Paul Whittaker, Paul H. B. Gardiner: A Methodology for Model-Checking Ad-hoc Networks. SPIN 2003:181-196
+93 Stefan Edelkamp: Promela Planning. SPIN 2003:197-212
+92 Cormac Flanagan, Shaz Qadeer: Thread-Modular Model Checking. SPIN 2003:213-224
+91 Alexandre David, Gerd Behrmann, Kim Guldstrand Larsen, Wang Yi: Unification & Sharing in Timed Automata Verification. SPIN 2003:225-229
+90 Steven Eker, José Meseguer, Ambarish Sridharanarayanan: The Maude LTL Model Checker and Its Implementation. SPIN 2003:230-234
+89 Thomas A. Henzinger, Ranjit Jhala, Rupak Majumdar, Grégoire Sutre: Software Verification with BLAST. SPIN 2003:235-239
+88 Dragan Bosnacki, Stefan Leue: Model Checking of Software, 9th International SPIN Workshop, Grenoble, France, April 11-13, 2002, Proceedings SPIN 2002
+87 Edmund M. Clarke: SAT-Based Counterexample Guided Abstraction Refinement. SPIN 2002:1
+86 Patrick Cousot: Abstract Interpretation: Theory and Practice. SPIN 2002:2-5
+85 Theo C. Ruys: SPIN Tutorial: How to Become a SPIN Doctor. SPIN 2002:6-13
+84 Dennis Dams: Abstraction in Software Model Checking: Principles and Practice (Tutorial Overview and Bibliography). SPIN 2002:14-21
+83 Radu Iosif: Symmetry Reduction Criteria for Software Model Checking. SPIN 2002:22-41
+82 David A. Basin, Stefan Friedrich, Marek Gawkowski, Joachim Posegga: Bytecode Model Checking: An Experimental Analysis. SPIN 2002:42-59
+81 Harry C. Li, Kathi Fisler, Shriram Krishnamurthi: The Influence of Software Module Systems on Modular Verification. SPIN 2002:60-78
+80 Armelle Prigent, Franck Cassez, Philippe Dhaussy, Olivier Roux: Extending the Translation from SDL to Promela. SPIN 2002:79-94
+79 Wiebe van der Hoek, Michael Wooldridge: Model Checking Knowledge and Time. SPIN 2002:95-111
+78 Alberto Lluch-Lafuente, Stefan Edelkamp, Stefan Leue: Partial Order Reduction in Directed Model Checking. SPIN 2002:112-127
+77 Benedikt Bollig, Martin Leucker, Michael Weber: Local Parallel Model Checking for the Alternation-Free µ-Calculus. SPIN 2002:128-147
+76 James S. Pascoe, Roger J. Loader, Vaidy S. Sunderam: The Agreement Problem Protocol Verification Environment. SPIN 2002:148-169
+75 Hyun-Wook Jin, Ki-Seok Bang, Chuck Yoo, Jin-Young Choi, Hojung Cha: Bottleneck Analysis of a Gigabit Network Interface Card: Formal Verification Approach. SPIN 2002:170-186
+74 Paolo Maggi, Riccardo Sisto: Using SPIN to Verify Security Properties of Cryptographic Protocols. SPIN 2002:187-204
+73 Ramazan Savas Aygün, Aidong Zhang: Modeling and Verification of Interactive Flexible Multimedia Presentations Using PROMELA/SPIN. SPIN 2002:205-212
+72 Olga Shumsky Matlin, Ewing L. Lusk, William McCune: SPINning Parallel Systems Software. SPIN 2002:213-220
+71 Denis Lugiez, Peter Niebert, Sarah Zennou: Dynamic Bounds and Transition Merging for Local First Search. SPIN 2002:221-229
+70 Cindy Eisner, Doron Peled: Comparing Symbolic and Explicit Model Checking of a Software System. SPIN 2002:230-239
+69 Per Bjesse: Industrial Model Checking Based on Satisfiability Solvers. SPIN 2002:240
+68 Yves-Marie Quemener: A Typical Testing Problem: Validating WML Cellphones. SPIN 2002:241
+67 Alex Groce, Willem Visser: Heuristic Model Checking for Java Programs. SPIN 2002:242-245
+66 Christian Stehno: System Specification and Verification Using High Level Concepts - A Tool Demonstration. SPIN 2002:246-249
+65 Tiziana Margaria, Oliver Niese, Bernhard Steffen: Demonstration of an Automated Integrated Test Environment for Web-Based Applications. SPIN 2002:250-253
+64 María-del-Mar Gallardo, Jesús Martínez, Pedro Merino, Ernesto Pimentel: alpha SPIN: Extending SPIN with Abstraction. SPIN 2002:254-258
+63 Matthew B. Dwyer: Model Checking Software, 8th International SPIN Workshop, Toronto, Canada, May 19-20, 2001, Proceedings SPIN 2001
+62 Doron Peled, Lenore D. Zuck: From Model Checking to a Temporal Proof. SPIN 2001:1-14
+61 Rob Gerth: Model Checking if Your Life Depends on It a View from Intel's Trenches. SPIN 2001:15
+60 Marsha Chechik, Benet Devereux, Arie Gurfinkel: Model-Checking Infinite State-Space Systems with Fine-Grained Abstractions Using SPIN. SPIN 2001:16-36
+59 Javier Esparza, Keijo Heljanko: Implementing LTL Model Checking with Net Unfoldings. SPIN 2001:37-56
+58 Stefan Edelkamp, Alberto Lluch-Lafuente, Stefan Leue: Directed Explicit Model Checking with HSF-SPIN. SPIN 2001:57-79
+57 Flavio Lerda, Willem Visser: Addressing Dynamic Issues of Program Model Checking. SPIN 2001:80-102
+56 Thomas Ball, Sriram K. Rajamani: Automatically Validating Temporal Safety Properties of Interfaces. SPIN 2001:103-122
+55 Guoping Jia, Susanne Graf: Verification Experiments on the MASCARA Protocol. SPIN 2001:123-142
+54 Muffy Calder, Alice Miller: Using SPIN for Feature Interaction Analysis - A Case Study. SPIN 2001:143-162
+53 Shin Nakajima, Tetsuo Tamai: Behavioural Analysis of the Enterprise JavaBeansTM Component Architecture. SPIN 2001:163-182
+52 Michael Baldamus, Jochen Schröder-Babo: p2b: A Translation Utility for Linking Promela and Symbolic Model Checking (Tool Paper). SPIN 2001:183-191
+51 Scott D. Stoller, Yanhong A. Liu: Transformations for Model Checking Distributed Java Programs. SPIN 2001:192-199
+50 Jiri Barnat, Lubos Brim, Jitka Stríbrná: Distributed LTL Model-Checking in SPIN. SPIN 2001:200-216
+49 Hubert Garavel, Radu Mateescu, Irina M. Smarandache: Parallel State Space Construction for Model-Checking. SPIN 2001:217-234
+48 Fabrice Derepas, Paul Gastin: Model Checking Systems of Replicated Processes with Spin. SPIN 2001:235-251
+47 Vivek K. Shanbhag, K. Gopinath: A SPIN-Based Model Checker for Telecommunication Protocols. SPIN 2001:252-271
+46 Clement Yuen, Wei Tjioe: Modeling and Verifying a Price Model for Congestion Control in Computer Networks Using Promela/Spin. SPIN 2001:272-287
+45 Leszek Holenderski: A Model Checking Project at Philips Research. SPIN 2001:288-295
+44 Darren D. Cofer, Eric Engstrom, Robert P. Goldman, David J. Musliner, Steve Vestal: Applications of Model Checking at Honeywell Laboratories. SPIN 2001:296-303
+43 Bernhard Steffen, Tiziana Margaria, Volker Braun: Coarse-Granular Model Checking in Practice. SPIN 2001:304-312
+42 Klaus Havelund, John Penix, Willem Visser: SPIN Model Checking and Software Verification, 7th International SPIN Workshop, Stanford, CA, USA, August 30 - September 1, 2000, Proceedings SPIN 2000
+41 Dragan Bosnacki, Dennis Dams, Leszek Holenderski: Symmetric Spin. SPIN 2000:1-19
+40 Radu Iosif, Riccardo Sisto: Using Garbage Collection in Model Checking. SPIN 2000:20-33
+39 Bengi Karaçali, Kuo-Chung Tai: Model Checking Based on Simultaneous Reachability Analysis. SPIN 2000:34-53
+38 Heikki Tauriainen, Keijo Heljanko: Testing SPIN's LTL Formula Conversion into Büchi Automata with Randomly Generated Input. SPIN 2000:54-72
+37 Ed Brinksma, Angelika Mader: Verification and Optimization of a PLC Control Schedule. SPIN 2000:73-92
+36 Nicholas Weininger, Darren D. Cofer: Modeling the ASCB-D Synchronization Algorithm with SPIN: A Case Study. SPIN 2000:93-112
+35 Thomas Ball, Sriram K. Rajamani: Bebop: A Symbolic Model Checker for Boolean Programs. SPIN 2000:113-130
+34 Gerard J. Holzmann: Logic Verification of ANSI-C Code with SPIN. SPIN 2000:131-147
+33 Wayne Liu: Interaction Abstraction for Compositional Finite State Systems. SPIN 2000:148-162
+32 Mila E. Majster-Cederbaum, Frank Salger: Correctness by Construction: Towards Verification in Hierarchical System Development. SPIN 2000:163-180
+31 Anca Browne, Henny Sipma, Ting Zhang: Linking STeP with SPIN. SPIN 2000:181-186
+30 Elena Fersman, Bengt Jonsson: Abstraction of Communication Channels in Promela: A Case Study. SPIN 2000:187-204
+29 James C. Corbett, Matthew B. Dwyer, John Hatcliff, Robby: A Language Framework for Expressing Checkable Properties of Dynamic Software. SPIN 2000:205-223
+28 Scott D. Stoller: Model-Checking Multi-threaded Distributed Java Programs. SPIN 2000:224-244
+27 Klaus Havelund: Using Runtime Analysis to Guide Model Checking of Java Programs. SPIN 2000:245-264
+26 Matthieu Martel, Marc Gengler: Communication Topology Analysis for Concurrent Programs. SPIN 2000:265-286
+25 Theo C. Ruys: Low-Fat Recipes for SPIN. SPIN 2000:287-321
+24 Philippa J. Broadfoot, A. W. Roscoe: Tutorial on FDR and Its Applications. SPIN 2000:322
+23 Doron Drusinsky: The Temporal Rover and the ATG Rover. SPIN 2000:323-330
+22 Jerry J. Harrow: Runtime Checking of Multithreaded Applications with Visual Threads. SPIN 2000:331-342
+21 Dennis Dams, Rob Gerth, Stefan Leue, Mieke Massink: Theoretical and Practical Aspects of SPIN Model Checking, 5th and 6th International SPIN Workshops, Trento, Italy, July 5, 1999, Toulouse, France, September 21 and 24 1999, Proceedings SPIN 1999
+20 John M. Rushby: Integrated Formal Verification: Using Model Checking with Automated Abstraction, Invariant Generation, and Theorem Proving. SPIN 1999:1-11
+19 Jaco Geldenhuys, P. J. A. de Villiers: Runtime Efficient State Compaction in SPIN. SPIN 1999:12-21
+18 Flavio Lerda, Riccardo Sisto: Distributed-Memory Model Checking with SPIN. SPIN 1999:22-39
+17 Dragan Bosnacki: Partial Order Reduction in Presence of Rendez-vous Communications with Unless Constructs and Weak Fairness. SPIN 1999:40-56
+16 Karsten Stahl, Kai Baukus, Yassine Lakhnech, Martin Steffen: Divide, Abstract, and Model-Check. SPIN 1999:57-76
+15 Dan Craigen: Formal Methods Adoption: What's Working, What's Not. SPIN 1999:77-91
+14 Wil Janssen, Radu Mateescu, Sjouke Mauw, Peter Fennema, Petra van der Stappen: Model Checking for Managers. SPIN 1999:92-107
+13 Theo C. Ruys: Xspin/Project - Integrated Validation Management for Xspin. SPIN 1999:108-119
+12 Gerald Lüttgen, Victor Carreño: Analyzing Mode Confusion via Model Checking. SPIN 1999:120-135
+11 Carl B. Adekunle, Steve Schneider: Detecting Feature Interactions in the Terrestrial Trunked Radio (TETRA) Network Using Promela and Xspin. SPIN 1999:136-151
+10 Klaus Havelund: Java PathFinder, A Translator from Java to Promela. SPIN 1999:152
+9 Moataz Kamel, Stefan Leue: VIP: A Visual Interface for Promela. SPIN 1999:153
+8 Marsha Chechik, Dimitrie O. Paun: Events in Property Patterns. SPIN 1999:154-167
+7 Corina S. Pasareanu, Matthew B. Dwyer, Michael Huth: Assume-Guarantee Model Checking of Software: A Comparative Case Study. SPIN 1999:168-183
+6 María-del-Mar Gallardo, Pedro Merino: A Framework for Automatic Construction of Abstract Promela Models. SPIN 1999:184-199
+5 Wenhui Zhang: Model Checking Operator Procedures. SPIN 1999:200-215
+4 Klaus Havelund, Jens U. Skakkebæk: Applying Model Checking in Java Verification. SPIN 1999:216-231
+3 Gerard J. Holzmann: The Engineering of a Model Checker: The Gnu i-Protocol Case Study Revisited. SPIN 1999:232-244
+2 Heikki Tuominen: Embedding a Dialect of SDL in PROMELA. SPIN 1999:245-260
+1 Claudio Demartini, Radu Iosif, Riccardo Sisto: dSPIN: A Dynamic Extension of SPIN. SPIN 1999:261-276
